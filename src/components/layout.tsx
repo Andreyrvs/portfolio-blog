@@ -56,6 +56,12 @@ export default function Layout({
           </>
         )}
       </header>
+      <main>{children}</main>
+      {!home && (
+        <div>
+          <Link href="/">← Página Inicial</Link>
+        </div>
+      )}
     </div>
   )
 }
