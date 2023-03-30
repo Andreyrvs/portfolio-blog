@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import utilStyles from '../styles/utils.module.css';
 
-const profileImage = "../../images/profile.jpg"
+const profileImage = "/images/profile.png"
 const name = 'Andrey Rannerson Visniewski';
 export const siteTitle = 'Andreys Blog';
 
