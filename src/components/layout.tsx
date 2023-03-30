@@ -13,7 +13,7 @@ export default function Layout({
   home
 }: {
   children: React.ReactNode,
-  home?: boolean
+  home?: true
 }) {
   return (
     <div className={styles.container}>
