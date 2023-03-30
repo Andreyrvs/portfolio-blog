@@ -7,7 +7,7 @@ import { getSortedPostsData } from '../lib/posts'
 
 const presentation1 = "Olá, Eu sou Andrey. Tenho interesse em atuar como desenvolvedor Web, diante disso estou em processo de transição de carreira tendo atuado no setor público."
 
-const presentation2 = "Decidi me especializar na área de tecnologia após alguns anos trabalhando em serviços braçais que eram repetitivos e exigiam pouco conhecimento. Agora, estou animado para me desenvolver em tecnologias como JavaScript, TypeScript, React, Node.js e Python, para solucionar desafios em minha carreira."
+const presentation2 = "Decidi me especializar na área de tecnologia após alguns anos trabalhando em serviços braçais que eram repetitivos e exigiam pouco conhecimento. Agora, estou animado para me desenvolver em tecnologias como TypeScript, Next.js, para solucionar desafios em minha carreira."
 
 export default function Home({
   allPostsData
