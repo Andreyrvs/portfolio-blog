@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import utilStyles from '../styles/utils.module.css';
+import styles from './layout.module.css';
 
 const profileImage = "/images/profile.png"
 const name = 'Andrey Rannerson Visniewski';
@@ -15,7 +16,7 @@ export default function Layout({
   home?: boolean
 }) {
   return (
-    <div className="styles.container">
+    <div className={styles.container}>
       <Head>
         <meta 
           name='blog'
@@ -23,7 +24,7 @@ export default function Layout({
           />
         <meta name="og:title" content={siteTitle} />
       </Head>
-      <header className='styles.header'>
+      <header className={styles.header}>
         {home ? (
           <>
             <Image
@@ -58,7 +59,7 @@ export default function Layout({
       </header>
       <main>{children}</main>
       {!home && (
-        <div>
+        <div className={styles.backToHome}>
           <Link href="/">← Página Inicial</Link>
         </div>
       )}
