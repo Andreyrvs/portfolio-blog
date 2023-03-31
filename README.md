@@ -4,11 +4,11 @@
 
 Blog
 
-<!-- 
+<!--
 > Utiliza a API []()
  -->
 
-<!-- 
+<!--
 Colegas que contribuíram para a realização do projeto:
 
 - [@colega1](https://github.com/ "github")
@@ -18,25 +18,26 @@ Colegas que contribuíram para a realização do projeto:
 ## Técnologias usadas
 
 Front-end:
+
 > Desenvolvido usando: React, Typescript, Next.js, Markdown, Css
 
-<!-- 
+<!--
 ## Habilidades
 
-Adquiri essas habilidades ao desenvolver esse projeto: 
+Adquiri essas habilidades ao desenvolver esse projeto:
 -->
 
 ## Preview da Aplicação
 
 | ![Login](./readme-assets/aplicacao-.png) | ![Home](./readme-assets/aplicacao-.png) |
-| ----------- | ----------- |
+| ---------------------------------------- | --------------------------------------- |
 
 <!-- ## Instalando Dependências
 
 - Clone o projeto:
 
   ```bash
-  git clone 
+  git clone
   ```
 
   > Front-end
