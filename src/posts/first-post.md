@@ -1,6 +1,6 @@
 ---
 title: 'Primeiro Post'
-date: '2023-03-29'
+date: '2023-03-29 20:00'
 summary: '🚩 O primeiro de muitos'
 tags: ['first']
 ---

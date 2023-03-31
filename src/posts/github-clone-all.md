@@ -1,6 +1,6 @@
 ---
 title: 'Github: Clonar todos repositórios'
-date: '2023-03-31'
+date: '2023-03-31 11:30'
 summary: 'guia de como buscar e clonar repositórios do GitHub usando o GitHub CLI'
 tags: ['github', 'home']
 ---
