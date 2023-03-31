@@ -20,9 +20,9 @@ export default function Home({
     title: string
     id: string
     summary: string
+    tags: Array<string>
   }[]
 }) {
-  console.log(allPostsData);
   
   return (
     <Layout home>
@@ -37,12 +37,14 @@ export default function Home({
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, summary, title }) => (
+          {allPostsData.map(({ id, date, tags ,summary, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>{title}</Link>
               <br />
-              <small>{summary}</small>
-              <br />
+              <small>
+                {summary}
+              </small>
+              <br/>
               <small className={utilStyles.lightText}>
                 <Date dateString={date} />
               </small>
