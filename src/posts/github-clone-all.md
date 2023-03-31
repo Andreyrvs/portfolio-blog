@@ -13,7 +13,7 @@ Antes de clonar é bom saber com pesquisar e se vem o que é esperado.
 Substitua *org-aqui* pelo nome da sua org.
 
 ```bash
-  gh search repos org-aqui --limit 1000
+  $ gh search repos org-aqui --limit 1000
 ```
 
 ---
@@ -21,7 +21,8 @@ Substitua *org-aqui* pelo nome da sua org.
 É possível buscar todos os repositórios de um **time** especifico usando:
 
 ```bash
-  gh search repos org-aqui --match name "seu-time" --limit 1000
+  $ gh search repos org-aqui --match name "seu-time" \
+  --limit 1000
 ```
 
 ### Clonando repositórios
@@ -29,7 +30,7 @@ Substitua *org-aqui* pelo nome da sua org.
 Esse script é responsável por clonar cada repositório e criar um diretório com o nome da Organização.
 
 ```bash
-  while read -r repo _; do
+  $ while read -r repo _; do
     gh repo clone "$repo" "$repo"
   done
 ```
@@ -39,9 +40,30 @@ Esse script é responsável por clonar cada repositório e criar um diretório c
 Agora combinamos a busca com o loop acima.
 
 ```bash
-gh search repos org-aqui --match name "seu-time" --limit 1000 | while read -r repo _; do
-  gh repo clone "$repo" "$repo"
-done
+  $ gh search repos org-aqui --match name "seu-time" \
+  --limit 1000 \
+  | while read -r repo _; do
+    gh repo clone "$repo" "$repo"
+  done
 ```
 
-#### Repositório pessoal
+### Repositório pessoal
+
+Para buscar seu repositórios use:
+
+```bash
+  $ gh search repos --owner "seu-usuario-github" \
+  --limit 1000 --visibility public 
+```
+
+---
+
+A o loop é o mesmo, o que muda é a forma de pesquisar.
+
+```bash
+  $ gh search repos --owner "seu-usuario-github" \
+  --limit 1000 --visibility public \
+  | while read -r repo _; do
+    gh repo clone "$repo" "$repo"
+  done
+```
