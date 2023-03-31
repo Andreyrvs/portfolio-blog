@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import { getSortedPostsData } from '../lib/posts'
+import Date from '../components/date'
 
 const presentation1 =
   'Olá, Eu sou Andrey. Tenho interesse em atuar como desenvolvedor Web, diante disso estou em processo de transição de carreira tendo atuado no setor público.'
@@ -18,8 +19,11 @@ export default function Home({
     date: string
     title: string
     id: string
+    summary: string
   }[]
 }) {
+  console.log(allPostsData);
+  
   return (
     <Layout home>
       <Head>
@@ -33,10 +37,15 @@ export default function Home({
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, date, summary, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>{title}</Link>
               <br />
+              <small>{summary}</small>
+              <br />
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
         </ul>
