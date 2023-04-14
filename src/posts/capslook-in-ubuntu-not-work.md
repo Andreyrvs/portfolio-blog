@@ -9,15 +9,15 @@ Ao instalar o ubuntu 22.04 me deparei com o seguinte problema. Ao pressionar **
 
 1. Para resolver isso instale o **Gnome Tweaks** na ubuntu software:
 
-    ![Gnome Tweaks](/images/gnome-tweaks.png "Gnome Tweaks")
+   ![Gnome Tweaks](/images/gnome-tweaks.png 'Gnome Tweaks')
 
 2. Vá em teclado & mouse **¹** depos vá em Opções adicionais de layout **²**:
 
-    ![Teclado e Mouse](/images/gnome-tweaks-instructions-01.png "Teclado e Mouse")
+   ![Teclado e Mouse](/images/gnome-tweaks-instructions-01.png 'Teclado e Mouse')
 
-3. Vá em  Comportamento do Caps Lock:
+3. Vá em Comportamento do Caps Lock:
 
-    ![Opções de layout](/images/gnome-tweaks-instructions-02.png "Opções de layout")
+   ![Opções de layout](/images/gnome-tweaks-instructions-02.png 'Opções de layout')
 
 ---
 
