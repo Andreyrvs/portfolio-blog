@@ -1,0 +1,77 @@
+---
+title: 'Github: Clonar todos repositórios'
+date: '2023-03-31 11:30'
+description: Guia de como buscar e clonar repositórios do GitHub usando o GitHub CLI
+thumbnailUrl: '/images/profile.png'
+tags: ['github', 'github cli', 'bash script']
+---
+
+Pré-requisito ter o [Github CLI](https://cli.github.com/) instalado e configurado.
+
+## Como buscar os repositórios da **Organização**
+
+Antes de clonar é bom saber com pesquisar e se vem o que é esperado.
+
+Substitua _org-aqui_ pelo nome da sua org.
+
+<Code language="bash">
+  {`
+$ gh search repos org-aqui --limit 1000
+`}
+</Code>
+
+É possível buscar todos os repositórios de um **time** especifico usando:
+
+<Code language="bash">
+  {`
+$ gh search repos org-aqui \
+--match name "seu-time" --limit 1000
+`}
+</Code>
+
+### Clonando repositórios
+
+Esse script é responsável por clonar cada repositório e criar um diretório com o nome da Organização.
+
+<Code language="bash">
+  {`
+$ while read -r repo _; do
+  gh repo clone "$repo" "$repo"
+done
+  `}
+</Code>
+
+Agora combinamos a busca com o loop acima.
+
+<Code language="bash">
+  {`
+$ gh search repos org-aqui \
+ --match name "seu-time" --limit 1000
+| while read -r repo _; do
+  gh repo clone "$repo" "$repo"
+done
+`}
+</Code>
+
+### Repositório pessoal
+
+Para buscar seu repositórios use:
+
+<Code language="bash">
+  {`
+$ gh search repos --owner "seu-usuario-github" \
+--limit 1000 --visibility public
+`}
+</Code>
+
+A o loop é o mesmo, o que muda é a forma de pesquisar.
+
+<Code language="bash">
+  {`
+$ gh search repos --owner "seu-usuario-github" \
+--limit 1000 --visibility public \
+| while read -r repo _; do
+  gh repo clone "$repo" "$repo"
+done
+`}
+</Code>

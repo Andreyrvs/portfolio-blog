@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { serialize } from 'next-mdx-remote/serialize'
 import { remark } from 'remark'
 import html from 'remark-html'
 
@@ -36,34 +37,62 @@ export function getSortedPostsData() {
   })
 }
 
+// export function getAllPostIds() {
+//   const fileNames = fs.readdirSync(postsDirectory)
+//   return fileNames.map((fileName) => {
+//     return {
+//       params: {
+//         id: fileName.replace(/\.md$/, ''),
+//       },
+//     }
+//   })
+// }
+
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory)
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, ''),
-      },
-    }
-  })
+  const files = fs.readdirSync(path.join('src', 'posts'))
+  const paths = files.map((filename) => ({
+    params: {
+      slug: filename.replace('.mdx', ''),
+    },
+  }))
+
+  console.log(paths)
+  return paths
 }
 
+// export async function getPostData(id: string) {
+//   const fullPath = path.join(postsDirectory, `${id}.md`)
+//   const fileContents = fs.readFileSync(fullPath, 'utf8')
+
+//   // Use gray-matter to parse the post metadata section
+//   const matterResult = matter(fileContents)
+
+//   // Use remark to convert markdown into HTML string
+//   const processedContent = await remark()
+//     .use(html)
+//     .process(matterResult.content)
+//   const contentHtml = processedContent.toString()
+
+//   // Combine the data with the id and contentHtml
+//   return {
+//     id,
+//     contentHtml,
+//     ...(matterResult.data as { date: string; title: string }),
+//   }
+// }
+
 export async function getPostData(id: string) {
-  const fullPath = path.join(postsDirectory, `${id}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const fullPath = path.join(postsDirectory, `${id} + .mdx`)
+  const markdownWithMeta = fs.readFileSync(fullPath)
 
-  // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents)
+  const { data: frontMatter, content } = matter(markdownWithMeta)
+  const mdxSource = await serialize(content)
 
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content)
-  const contentHtml = processedContent.toString()
-
-  // Combine the data with the id and contentHtml
   return {
-    id,
-    contentHtml,
-    ...(matterResult.data as { date: string; title: string }),
+    props: {
+      frontMatter,
+      id,
+      mdxSource,
+    },
   }
 }
