@@ -41,6 +41,7 @@ export default function Home({ posts }: { posts: Props[] }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <link rel="icon" type="image/svg" href="/blog-svgrepo-com.svg" />
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
