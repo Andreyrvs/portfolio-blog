@@ -8,7 +8,7 @@ import Layout, { siteTitle } from "@/components/layout";
 import utilStyles from "../styles/utils.module.css";
 // import { getSortedPostsData } from '@/lib/posts'
 import Date from "@/components/date";
-import text from "@/utils/text";
+import { presentation1, presentation2 } from "@/utils/text";
 import Props from "@/types/Props";
 
 const POST_ROUTE = "/blog/";
@@ -44,7 +44,7 @@ export default function Home({ posts }: { posts: Props[] }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          {text.presentation1} {text.presentation2}
+          {presentation1} {presentation2}
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
