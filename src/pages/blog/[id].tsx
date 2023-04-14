@@ -11,7 +11,10 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import Props from "@/types/Props";
 import SyntaxHighlighter from "react-syntax-highlighter";
-const components = { SyntaxHighlighter };
+import Code from "@/components/Code";
+const components = { Code, SyntaxHighlighter };
+
+const WHITE_SPACE = " ";
 
 export default function Post(props: Props): JSX.Element {
   const {
@@ -19,7 +22,10 @@ export default function Post(props: Props): JSX.Element {
     mdxSource,
   } = props;
 
-  const listTags = tags.map((tag) => <small key={tag}>{tag}</small>);
+  const listTags = tags.map((tag) => (
+    <small key={tag}>{tag + WHITE_SPACE}</small>
+  ));
+
   return (
     <Layout>
       <Head>
