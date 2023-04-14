@@ -1,53 +1,80 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
-import Head from 'next/head'
-import Layout from '@/components/layout'
-import { getAllPostIds, getPostData } from '@/lib/posts'
-import Date from '@/components/date'
-import utilStyles from '@/styles/utils.module.css'
+import { GetStaticProps, GetStaticPaths } from "next";
+import Head from "next/head";
+import Layout from "@/components/layout";
+import { getAllPostIds, getPostData } from "@/lib/posts";
+import Date from "@/components/date";
+import utilStyles from "@/styles/utils.module.css";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
+import Props from "@/types/Props";
+import SyntaxHighlighter from "react-syntax-highlighter";
+const components = { SyntaxHighlighter };
 
-export default function Post({
-  postData,
-}: {
-  postData: {
-    title: string
-    date: string
-    contentHtml: string
-  }
-}) {
+export default function Post(props: Props): JSX.Element {
+  const {
+    frontMatter: { title, tags, date },
+    mdxSource,
+  } = props;
+
+  const listTags = tags.map((tag) => <small key={tag}>{tag}</small>);
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <h1 className={utilStyles.headingXl}>{title}</h1>
+        <div>{listTags}</div>
         <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
+          <Date dateString={date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <MDXRemote {...mdxSource} components={components}></MDXRemote>
       </article>
     </Layout>
-  )
+  );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
+const getStaticPaths = async () => {
+  const files = fs.readdirSync(path.join("src", "posts"));
+  const paths = files.map((filename) => ({
+    params: {
+      id: filename.replace(".mdx", ""),
+    },
+  }));
+
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};
 
-type GetProps = {
+type staticProps = {
   params: {
-    id: string
-  }
-}
+    id: string;
+  };
+};
 
-export const getStaticProps = async (props: GetProps) => {
+const getStaticProps = async (props: staticProps) => {
   const {
     params: { id },
-  } = props
+  } = props;
+  const markdownWithMeta = fs.readFileSync(
+    path.join("src", "posts", id + ".mdx")
+  );
 
-  return await getPostData(id)
-}
+  const { data: frontMatter, content } = matter(markdownWithMeta);
+  const mdxSource = await serialize(content);
+
+  return {
+    props: {
+      frontMatter,
+      id,
+      mdxSource,
+    },
+  };
+};
+
+export { getStaticProps, getStaticPaths };

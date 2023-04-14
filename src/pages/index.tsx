@@ -3,32 +3,39 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
-import { getSortedPostsData } from '@/lib/posts'
+// import { getSortedPostsData } from '@/lib/posts'
 import Date from '@/components/date'
 import text from '@/utils/text'
 import Props from '@/types/Props'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
 export default function Home({ posts }: { posts: Props[] }) {
-  const listItems = posts.map((post) => (
-    <li className={utilStyles.listItem} key={post.id}>
-      <Link href={text.POST_ROUTE + post.id}>
-        {post.frontMatter.description}
-      </Link>
-      <br />
-      <small>{post.frontMatter.description}</small>
-      <br />
-      <small>
-        Tags:
-        {post.frontMatter.tags.map((item: string) => (
-          <b key={item}>{` ${item}, `}</b>
-        ))}
-      </small>
-      <br />
-      <small className={utilStyles.lightText}>
-        <Date dateString={post.frontMatter.date} />
-      </small>
-    </li>
-  ))
+  const postId = posts.map((post) => post.id)
+
+  const listItems = posts.map(
+    ({ frontMatter: { description, tags, date, title } }, index) => (
+      <li className="{}" key={index}>
+        <Link href={text.POST_ROUTE + postId} passHref>
+          <h2>{title}</h2>
+          <br />
+          <small>{description}</small>
+          <br />
+          <small>
+            Tags:
+            {tags.map((item: string) => (
+              <b key={item}>{` ${item}, `}</b>
+            ))}
+          </small>
+          <br />
+          <small className={utilStyles.lightText}>
+            <Date dateString={date} />
+          </small>
+        </Link>
+      </li>
+    )
+  )
 
   return (
     <Layout home>
@@ -49,7 +56,16 @@ export default function Home({ posts }: { posts: Props[] }) {
 }
 
 export const getStaticProps = async () => {
-  const posts = getSortedPostsData()
+  const files = fs.readdirSync(path.join('src', 'posts'))
+  const posts = files.map((filename) => {
+    const mardownWithMeta = fs.readFileSync(path.join('src', 'posts', filename))
+    const { data: frontMatter } = matter(mardownWithMeta)
+
+    return {
+      frontMatter,
+      id: filename.split('.')[0],
+    }
+  })
 
   return {
     props: {

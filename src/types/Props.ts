@@ -1,7 +1,7 @@
 type Props = {
   frontMatter: {
     date: string
-    description: string
+    description?: string
     tags: Array<string>
     thumbnailUrl: string
     title: string
