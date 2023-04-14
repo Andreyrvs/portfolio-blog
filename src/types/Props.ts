@@ -1,4 +1,4 @@
-export type Props = {
+type Props = {
   frontMatter: {
     date: string
     description: string
@@ -11,5 +11,7 @@ export type Props = {
     frontmatter: object
     scope: object
   }
-  slug: string
+  id: string
 }
+
+export default Props

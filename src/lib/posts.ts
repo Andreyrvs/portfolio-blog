@@ -52,7 +52,7 @@ export function getAllPostIds() {
   const files = fs.readdirSync(path.join('src', 'posts'))
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace('.mdx', ''),
+      id: filename.replace('.mdx', ''),
     },
   }))
 
