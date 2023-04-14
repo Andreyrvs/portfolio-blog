@@ -4,13 +4,8 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import { getSortedPostsData } from '../lib/posts'
-import Date from '../components/date'
-
-const presentation1 =
-  'Olá, Eu sou Andrey. Estou buscando uma oportunidade na área de desenvolvimento web, por isso estou em processo de transição de carreira tendo atuado no setor público.'
-
-const presentation2 =
-  'Decidi me especializar na área de tecnologia após alguns anos trabalhando em serviços braçais que eram repetitivos e exigiam pouco conhecimento. Agora, estou animado para me desenvolver em tecnologias como TypeScript, Next.js, para solucionar desafios em minha carreira.'
+import Date from '@/components/date'
+import text from '@/utils/text'
 
 export default function Home({
   allPostsData,
@@ -30,7 +25,7 @@ export default function Home({
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          {presentation1} {presentation2}
+          {text.presentation1} {text.presentation2}
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -38,7 +33,7 @@ export default function Home({
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, tags, summary, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
+              <Link href={`${text.POSTROUTE}${id}`}>{title}</Link>
               <br />
               <small>{summary}</small>
               <br />
