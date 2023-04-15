@@ -63,7 +63,6 @@ export const getStaticProps: GetStaticProps = async () => {
     );
     const { data: frontMatter } = matter(mardownWithMeta);
     frontMatter.id = filename.split(".")[0];
-    console.log(frontMatter);
 
     return {
       // id: filename.split(".")[0],
@@ -78,8 +77,6 @@ export const getStaticProps: GetStaticProps = async () => {
       return -1;
     }
   });
-
-  console.log("🔥🔥🔥🔥", sortedPosts);
 
   return {
     props: {

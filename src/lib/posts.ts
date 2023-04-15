@@ -55,7 +55,6 @@ export function getAllPostIds() {
     },
   }));
 
-  console.log(paths);
   return paths;
 }
 
