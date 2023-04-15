@@ -17,21 +17,21 @@ export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
     ({ frontMatter: { description, tags, date, id, title } }, index) => (
       <li className={utilStyles.listItem} key={index}>
         <Link href={POST_ROUTE + id} passHref>
-          <h2>{title}</h2>
-          <br />
-          <small>{description}</small>
-          <br />
-          <small>
-            Tags:
-            {tags.map((item: string) => (
-              <b key={item}>{` ${item}, `}</b>
-            ))}
-          </small>
-          <br />
-          <small className={utilStyles.lightText}>
-            <Date dateString={date} />
-          </small>
+          {title}
         </Link>
+        <br />
+        <small>{description}</small>
+        <br />
+        <small>
+          Tags:
+          {tags.map((item: string) => (
+            <b key={item}>{` ${item}, `}</b>
+          ))}
+        </small>
+        <br />
+        <small className={utilStyles.lightText}>
+          <Date dateString={date} />
+        </small>
       </li>
     )
   );
