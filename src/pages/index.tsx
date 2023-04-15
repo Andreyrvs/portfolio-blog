@@ -41,6 +41,7 @@ export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
       <Head>
         <title>{siteTitle}</title>
         <link rel="icon" type="image/svg" href="/blog-svgrepo-com.svg" />
+        <meta name="description" content="Andrey's blog home page, " />
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
