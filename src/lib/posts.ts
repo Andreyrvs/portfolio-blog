@@ -1,41 +1,40 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-import { serialize } from 'next-mdx-remote/serialize'
-import { remark } from 'remark'
-import html from 'remark-html'
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { serialize } from "next-mdx-remote/serialize";
 
-const postsDirectory = path.join(process.cwd(), 'src/posts')
+const postsDirectory = path.join(process.cwd(), "src/posts");
 
-export function getSortedPostsData() {
-  // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '')
+// export function getSortedPostsData() {
+//   // Get file names under /posts
+//   const fileNames = fs.readdirSync(postsDirectory);
+//   const allPostsData = fileNames.map((fileName) => {
+//     // Remove ".md" from file name to get id
+//     const id = fileName.replace(/\.md$/, "");
 
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
+//     // Read markdown file as string
+//     const fullPath = path.join(postsDirectory, fileName);
+//     const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents)
+//     // Use gray-matter to parse the post metadata section
+//     const matterResult = matter(fileContents);
 
-    // Combine the data with the id
-    return {
-      id,
-      ...(matterResult.data as { date: string; title: string }),
-    }
-  })
-  // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
-  })
-}
+//     // Combine the data with the id
+//     return {
+//       id,
+//       ...(matterResult.data as { date: string; title: string }),
+//     };
+//   });
+
+//   // Sort posts by date
+//   return allPostsData.sort((a, b) => {
+//     if (a.date < b.date) {
+//       return 1;
+//     } else {
+//       return -1;
+//     }
+//   });
+// }
 
 // export function getAllPostIds() {
 //   const fileNames = fs.readdirSync(postsDirectory)
@@ -49,15 +48,15 @@ export function getSortedPostsData() {
 // }
 
 export function getAllPostIds() {
-  const files = fs.readdirSync(path.join('src', 'posts'))
+  const files = fs.readdirSync(path.join("src", "posts"));
   const paths = files.map((filename) => ({
     params: {
-      id: filename.replace('.mdx', ''),
+      id: filename.replace(".mdx", ""),
     },
-  }))
+  }));
 
-  console.log(paths)
-  return paths
+  console.log(paths);
+  return paths;
 }
 
 // export async function getPostData(id: string) {
@@ -82,11 +81,11 @@ export function getAllPostIds() {
 // }
 
 export async function getPostData(id: string) {
-  const fullPath = path.join(postsDirectory, `${id} + .mdx`)
-  const markdownWithMeta = fs.readFileSync(fullPath)
+  const fullPath = path.join(postsDirectory, `${id} + .mdx`);
+  const markdownWithMeta = fs.readFileSync(fullPath);
 
-  const { data: frontMatter, content } = matter(markdownWithMeta)
-  const mdxSource = await serialize(content)
+  const { data: frontMatter, content } = matter(markdownWithMeta);
+  const mdxSource = await serialize(content);
 
   return {
     props: {
@@ -94,5 +93,5 @@ export async function getPostData(id: string) {
       id,
       mdxSource,
     },
-  }
+  };
 }
