@@ -19,7 +19,7 @@ Colegas que contribuíram para a realização do projeto:
 
 Front-end:
 
-> Desenvolvido usando: React, Typescript, Next.js, Markdown, Css
+> Desenvolvido usando: React, Typescript, Next.js, MDX, Css
 
 <!--
 ## Habilidades
@@ -29,7 +29,7 @@ Adquiri essas habilidades ao desenvolver esse projeto:
 
 ## Preview da Aplicação
 
-| ![Login](./readme-assets/aplicacao-.png) | ![Home](./readme-assets/aplicacao-.png) |
+| ![Login](./public/readme-assets/aplicacao-home.png) |  |
 | ---------------------------------------- | --------------------------------------- |
 
 <!-- ## Instalando Dependências

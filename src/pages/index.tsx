@@ -1,32 +1,46 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
-import { GetStaticProps } from 'next'
-import { getSortedPostsData } from '../lib/posts'
-import Date from '../components/date'
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import Head from "next/head";
+import Link from "next/link";
+import { GetStaticProps } from "next";
+import Layout, { siteTitle } from "@/components/layout";
+import utilStyles from "../styles/utils.module.css";
+import Date from "@/components/date";
+import { presentation1, presentation2 } from "@/utils/text";
+import Props from "@/types/Props";
 
-const presentation1 =
-  'Olá, Eu sou Andrey. Estou buscando uma oportunidade na área de desenvolvimento web, por isso estou em processo de transição de carreira tendo atuado no setor público.'
+const POST_ROUTE = "/blog/";
 
-const presentation2 =
-  'Decidi me especializar na área de tecnologia após alguns anos trabalhando em serviços braçais que eram repetitivos e exigiam pouco conhecimento. Agora, estou animado para me desenvolver em tecnologias como TypeScript, Next.js, para solucionar desafios em minha carreira.'
+export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
+  const listItems = sortedPosts.map(
+    ({ frontMatter: { description, tags, date, id, title } }, index) => (
+      <li className={utilStyles.listItem} key={index}>
+        <Link href={POST_ROUTE + id} passHref>
+          {title}
+        </Link>
+        <br />
+        <small>{description}</small>
+        <br />
+        <small>
+          Tags:
+          {tags.map((item: string) => (
+            <b key={item}>{` ${item}, `}</b>
+          ))}
+        </small>
+        <br />
+        <small className={utilStyles.lightText}>
+          <Date dateString={date} />
+        </small>
+      </li>
+    )
+  );
 
-export default function Home({
-  allPostsData,
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-    summary: string
-    tags: Array<string>
-  }[]
-}) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <link rel="icon" type="image/svg" href="/blog-svgrepo-com.svg" />
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
@@ -35,29 +49,38 @@ export default function Home({
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, tags, summary, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <br />
-              <small>{summary}</small>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+        <ul className={utilStyles.list}>{listItems}</ul>
       </section>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+  const files = fs.readdirSync(path.join("src", "posts"));
+  const posts = files.map((filename) => {
+    const mardownWithMeta = fs.readFileSync(
+      path.join("src", "posts", filename)
+    );
+    const { data: frontMatter } = matter(mardownWithMeta);
+    frontMatter.id = filename.split(".")[0];
+
+    return {
+      // id: filename.split(".")[0],
+      frontMatter,
+    };
+  });
+
+  const sortedPosts = posts.sort((a, b) => {
+    if (a.frontMatter.date < b.frontMatter.date) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+
   return {
     props: {
-      allPostsData,
+      sortedPosts,
     },
-  }
-}
+  };
+};
