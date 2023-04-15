@@ -30,6 +30,10 @@ export default function Post(props: Props): JSX.Element {
     <Layout>
       <Head>
         <title>{title}</title>
+        <meta
+          name="description"
+          content="Page with the list of all posts, all content is dynamically generated through MDX."
+        />
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{title}</h1>
