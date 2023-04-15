@@ -1,17 +1,17 @@
 type Props = {
   frontMatter: {
-    date: string
-    description?: string
-    tags: Array<string>
-    thumbnailUrl: string
-    title: string
-  }
+    date: string;
+    description?: string;
+    tags: Array<string>;
+    thumbnailUrl: string;
+    title: string;
+    id: string;
+  };
   mdxSource: {
-    compiledSource: string
-    frontmatter: object
-    scope: object
-  }
-  id: string
-}
+    compiledSource: string;
+    frontmatter: object;
+    scope: object;
+  };
+};
 
-export default Props
+export default Props;
