@@ -5,7 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import Layout, { siteTitle } from "@/components/layout";
-import utilStyles from "../styles/utils.module.css";
+import utilStyles from "@/styles/utils.module.css";
 import Date from "@/components/date";
 import { presentation1, presentation2 } from "@/utils/text";
 import Props from "@/types/Props";
@@ -43,15 +43,15 @@ export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
         <link rel="icon" type="image/svg" href="/blog-svgrepo-com.svg" />
         <meta name="description" content="Andrey's blog home page, " />
       </Head>
-      <section className={utilStyles.headingMd}>
+      {/* <section className={utilStyles.headingMd}>
         <p>
           {presentation1} {presentation2}
         </p>
-      </section>
-      {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      </section> */}
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>{listItems}</ul>
-      </section> */}
+      </section>
     </Layout>
   );
 }
