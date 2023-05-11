@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+
+.ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.25rem;
+  width: 100%;
+}

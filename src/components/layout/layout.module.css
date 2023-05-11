@@ -40,3 +40,8 @@
   margin: 3rem 0 0;
 }
 
+
+.main {
+  display: flex;
+  align-items: center;
+}
