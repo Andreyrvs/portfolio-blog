@@ -35,23 +35,20 @@ export default function Layout({
     }
   };
 
-  const handleImageSize = () => {
-    return (
-      home && (
-        <>
-          <Image
-            priority
-            src={profileImage}
-            className={utilStyles.borderCircle}
-            height={144}
-            width={144}
-            alt={name}
-          />
-          <h1 className={utilStyles.heading2xl}>{name}</h1>
-        </>
-      )
-    );
-  };
+  const handleImageSize = home && (
+    <>
+      <Image
+        priority
+        src={profileImage}
+        className={utilStyles.borderCircle}
+        height={144}
+        width={144}
+        alt={name}
+      />
+      <h1 className={utilStyles.heading2xl}>{name}</h1>
+    </>
+  );
+
   return (
     <div className={styles.container}>
       <Head>
@@ -59,7 +56,7 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
       </Head>
       <Navbar />
-      <header className={styles.header}>{handleImageSize()}</header>
+      <header className={styles.header}>{handleImageSize}</header>
       <main>{children}</main>
       {handleBackToHome()}
     </div>
