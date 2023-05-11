@@ -1,19 +1,24 @@
 import { Viewer, Worker } from "@react-pdf-viewer/core";
-import { fullScreenPlugin } from "@react-pdf-viewer/full-screen";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/full-screen/lib/styles/index.css";
 import styles from "./PdfViewer.module.css";
+import {
+  fullScreenPlugin,
+  ExitFullScreenIcon,
+  FullScreenIcon,
+} from "@react-pdf-viewer/full-screen";
+import { SpecialZoomLevel } from "@react-pdf-viewer/core";
 
-interface FullScreenButtonExampleProps {
+type Zoom = (scale: number | SpecialZoomLevel) => void;
+
+interface PdfViewerProps {
   fileUrl: string;
 }
-const FullScreenButtonExample: React.FC<FullScreenButtonExampleProps> = ({
-  fileUrl,
-}) => {
+
+const PdfViewer: React.FC<PdfViewerProps> = ({ fileUrl }) => {
   const fullScreenPluginInstance = fullScreenPlugin();
   const { EnterFullScreenButton } = fullScreenPluginInstance;
-
   return (
     <Worker workerUrl="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js">
       <div className={`rpv-core__viewer ${styles.card}`}>
@@ -28,4 +33,4 @@ const FullScreenButtonExample: React.FC<FullScreenButtonExampleProps> = ({
   );
 };
 
-export default FullScreenButtonExample;
+export default PdfViewer;
