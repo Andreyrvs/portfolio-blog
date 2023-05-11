@@ -7,7 +7,7 @@ export default function CardProject({
   html_url,
 }: GithubRepo) {
   return (
-    <div>
+    <>
       <div className={styles.items}>
         <p>{name}</p>
         <p>{description}</p>
@@ -15,6 +15,6 @@ export default function CardProject({
           Repositório
         </a>
       </div>
-    </div>
+    </>
   );
 }
