@@ -4,7 +4,7 @@ import Link from "next/link";
 import utilStyles from "@/styles/utils.module.css";
 import styles from "./layout.module.css";
 import Navbar from "@/components/navbar/Navbar";
-
+import ScrollToTopButton from "@/components/scrollToTopButton/ScrollToTopButton";
 const profileImage = "/images/profile.png";
 const name = "Andrey Rannerson Visniewski";
 export const siteTitle = "Andreys Blog";
@@ -57,7 +57,11 @@ export default function Layout({
       </Head>
       <Navbar />
       <header className={styles.header}>{handleImageSize}</header>
-      <main>{children}</main>
+      <main>
+        <ScrollToTopButton />
+        {children}
+      </main>
+
       {handleBackToHome()}
     </div>
   );
