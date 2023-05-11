@@ -12,10 +12,28 @@ export const siteTitle = "Andreys Blog";
 export default function Layout({
   children,
   home,
+  blog,
 }: {
   children: React.ReactNode;
   home?: true;
+  blog?: true;
 }) {
+  const handleBackToHome = () => {
+    if (blog) {
+      return (
+        <div className={styles.backToHome}>
+          <Link href="/blog">← Blog Inicial</Link>
+        </div>
+      );
+    }
+    if (!home) {
+      return (
+        <div className={styles.backToHome}>
+          <Link href="/">← Página Inicial</Link>
+        </div>
+      );
+    }
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -39,11 +57,12 @@ export default function Layout({
         )}
       </header>
       <main>{children}</main>
-      {!home && (
+      {handleBackToHome()}
+      {/* {!home && (
         <div className={styles.backToHome}>
           <Link href="/">← Página Inicial</Link>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

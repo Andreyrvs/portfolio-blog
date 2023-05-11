@@ -27,7 +27,7 @@ export default function Post(props: Props): JSX.Element {
   ));
 
   return (
-    <Layout>
+    <Layout blog>
       <Head>
         <title>{title}</title>
         <meta
