@@ -5,18 +5,20 @@ import CardProject from "@/components/CardProject/CardProject";
 import styles from "@/components/CardProject/CardProject.module.css";
 
 function Projetos({ repositories }: any) {
-  const handleRepos = repositories.map((repo: GithubRepo, index: number) => (
-    <CardProject
-      key={index}
-      name={repo.name}
-      description={repo.description}
-      html_url={repo.html_url}
-    />
-  ));
+  const handleRepositories = repositories.map(
+    (repo: GithubRepo, index: number) => (
+      <CardProject
+        key={index}
+        name={repo.name}
+        description={repo.description}
+        html_url={repo.html_url}
+      />
+    )
+  );
   return (
     <Layout>
       <h1>Projetos</h1>
-      <div className={styles.card}>{handleRepos}</div>
+      <div className={styles.card}>{handleRepositories}</div>
     </Layout>
   );
 }
