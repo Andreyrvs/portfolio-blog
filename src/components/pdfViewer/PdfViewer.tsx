@@ -17,7 +17,6 @@ interface ToolbarSlotsProps {
 const PdfViewer: React.FC<ToolbarSlotsProps> = ({ fileUrl }) => {
   const toolbarPluginInstance = toolbarPlugin({
     fullScreenPlugin: {
-      // Zoom to fit the screen after entering and exiting the full screen mode
       onEnterFullScreen: (zoom) => {
         zoom(SpecialZoomLevel.PageWidth);
       },

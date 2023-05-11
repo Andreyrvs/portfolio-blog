@@ -60,7 +60,6 @@ export const getStaticProps: GetStaticProps = async () => {
     frontMatter.id = filename.split(".")[0];
 
     return {
-      // id: filename.split(".")[0],
       frontMatter,
     };
   });
