@@ -1,0 +1,37 @@
+.scrollBtn {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid black;
+  bottom: 20px;
+  cursor: pointer;
+  outline: 0;
+  padding: 13px 20px;
+  position: fixed;
+  right: 20px;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+  
+.scrollBtn::after {
+  background-color: #ffe54c;
+  content: "";
+  height: 100%;
+  left: 7px;
+  position: absolute;
+  top: 7px;
+  transition: 0.2s;
+  width: 100%;
+  z-index: -1;
+}
+  
+.scrollBtn:hover::after {
+  left: 0;
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  .scrollBtn {
+    padding: 13px 50px;
+  }
+}
+    
