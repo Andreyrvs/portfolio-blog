@@ -5,7 +5,6 @@ import {
   ToolbarSlot,
   ToolbarProps,
 } from "@react-pdf-viewer/toolbar";
-import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/toolbar/lib/styles/index.css";
 import style from "./pdfViewer.module.css";
