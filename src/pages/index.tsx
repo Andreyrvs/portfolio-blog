@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          {presentation1} {presentation2}
+          {presentation1}. {presentation2}
         </p>
       </section>
     </Layout>
