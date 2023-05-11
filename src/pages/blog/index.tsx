@@ -6,7 +6,7 @@ import Link from "next/link";
 import { GetStaticProps } from "next";
 import Layout, { siteTitle } from "@/components/layout/Layout";
 import utilStyles from "@/styles/utils.module.css";
-import Date from "@/components/date";
+import Date from "@/components/Date";
 import Props from "@/types/Props";
 
 const POST_ROUTE = "/blog/";

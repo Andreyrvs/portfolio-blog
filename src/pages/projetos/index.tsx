@@ -1,8 +1,8 @@
 import Layout from "@/components/layout/Layout";
 import GetGithubRepos from "@/utils/GetGithubRepos";
 import GithubRepo from "@/types/GithubRepo";
-import CardProject from "@/components/CardProject/CardProject";
-import styles from "@/components/CardProject/CardProject.module.css";
+import CardProject from "@/components/cardProject/CardProject";
+import styles from "@/components/cardProject/CardProject.module.css";
 
 function Projetos({ repositories }: any) {
   const handleRepositories = repositories.map(
