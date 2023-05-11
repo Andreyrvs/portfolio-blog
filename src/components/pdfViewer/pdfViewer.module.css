@@ -2,6 +2,7 @@
   display: flex;
 }
 
+
 .card {
   border: 1px solid rgba(0, 0, 0, 0.3);
   display: flex;
@@ -18,15 +19,23 @@
   padding: 4px;
 }
 
+@media screen and (max-width: 768px) {
+  .cardHeader {
+    align-items: flex-start;
+    background-color: #eee;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5),;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+  }
+}
+
 .cardBody {
   flex: 1;
   overflow: hidden;
+  height: 100%;
 }
 
 .spaceItens {
   padding: 0 2px;
-}
-
-.currentPageInput {
-  width: 3rem;
 }
