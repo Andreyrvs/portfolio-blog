@@ -58,11 +58,6 @@ export default function Layout({
       </header>
       <main>{children}</main>
       {handleBackToHome()}
-      {/* {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Página Inicial</Link>
-        </div>
-      )} */}
     </div>
   );
 }
