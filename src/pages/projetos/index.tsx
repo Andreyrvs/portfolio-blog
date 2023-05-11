@@ -1,17 +1,22 @@
 import Layout from "@/components/layout/Layout";
 import GetGithubRepos from "@/utils/GetGithubRepos";
 import GithubRepo from "@/types/GithubRepo";
+import CardProject from "@/components/CardProject/CardProject";
+import styles from "@/components/CardProject/CardProject.module.css";
 
 function Projetos({ repositories }: any) {
-  repositories.map((repo: GithubRepo, index: number) => console.log(repo));
-
   const handleRepos = repositories.map((repo: GithubRepo, index: number) => (
-    <div key={index}>{repo.name}</div>
+    <CardProject
+      key={index}
+      name={repo.name}
+      description={repo.description}
+      html_url={repo.html_url}
+    />
   ));
   return (
     <Layout>
       <h1>Projetos</h1>
-      <div>{handleRepos}</div>
+      <div className={styles.card}>{handleRepos}</div>
     </Layout>
   );
 }
