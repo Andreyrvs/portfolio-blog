@@ -1,5 +1,5 @@
 import CodeProps from "@/types/CodeProps";
-import SyntaxHighlighter from "react-syntax-highlighter";
+import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 export default function Code(props: CodeProps) {
