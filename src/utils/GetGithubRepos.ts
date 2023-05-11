@@ -8,7 +8,7 @@ const GetGithubRepos = async () => {
     if (repo.full_name.match(regex)) return repo.full_name;
   });
 
-  console.log(names);
+  // console.log(names);
 
   return names;
 };
