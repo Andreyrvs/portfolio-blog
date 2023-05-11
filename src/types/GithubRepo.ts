@@ -1,7 +1,7 @@
 type GithubRepo = {
   name?: string;
   description?: string;
-  git_url?: string;
+  html_url?: string;
 };
 
 export default GithubRepo;
