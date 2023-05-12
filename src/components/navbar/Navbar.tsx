@@ -9,13 +9,13 @@ export default function Navbar() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/curriculo">Currículo</Link>
+          <Link href="/curriculum">Currículo</Link>
         </li>
         <li>
           <Link href="/blog">Blog</Link>
         </li>
         <li>
-          <Link href="/projetos">Projetos</Link>
+          <Link href="/projects">Projetos</Link>
         </li>
       </ul>
     </nav>
