@@ -7,29 +7,25 @@ export default function CardProject({
   html_url,
   homepage,
 }: GithubRepo) {
-  const handleRepositoriesNames = (name: string) => {
-    if (name.includes("stranger")) {
-      return handleStranger(name);
+  const handleRepositoriesNames = (name: string = "empty") => {
+    if (name.includes("Stranger")) {
+      return handleNameStranger(name);
     }
-    return handleDefault(name);
+    return handleWhiteSpaces(name);
   };
 
-  const handleStranger = (name: string) => {
+  const handleNameStranger = (name: string = "empty") => {
     const removeDot = name.replace(/\d+\./g, "");
     const removeHyphen = removeDot.replace(/[-\d]/g, " ");
+    const removeWithSpaces = removeHyphen.trim();
 
-    const inserted = removeHyphen.includes("-1")
-      ? removeHyphen.concat(" Backend")
-      : removeHyphen.concat(" Frontend");
-
-    const removeWithSpaces = inserted.trim();
     return removeWithSpaces;
   };
 
-  const handleDefault = (name: string) => {
+  const handleWhiteSpaces = (name: string = "empty") => {
     const newStr = name.replace(/[-\d]/g, " ");
-
     const removeWithSpaces = newStr.trim();
+
     return removeWithSpaces;
   };
 
