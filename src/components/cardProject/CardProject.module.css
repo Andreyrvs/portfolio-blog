@@ -12,18 +12,18 @@
 }
 
 .card {
-  display: flex;
-  gap: 0.5rem;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-user-select: none;
   background-color: transparent;
   border: 1px solid black;
-  padding: 0.5rem  0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: card-height;
+  justify-content: space-between;
+  padding: 0.5rem 0.875rem;
   position: relative;
   touch-action: manipulation;
-  -webkit-user-select: none;
   user-select: none;
-  height: card-height;
   z-index: 1;
 }
   
