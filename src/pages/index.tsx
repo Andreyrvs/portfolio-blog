@@ -9,11 +9,11 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
         <link rel="icon" type="image/svg" href="/blog-svgrepo-com.svg" />
-        <meta name="description" content="Andrey's blog home page, " />
+        <meta name="description" content="Andrey's portfolio home page" />
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          {presentation1}. {presentation2}
+          {presentation1}. {presentation2}👋🏼
         </p>
       </section>
     </Layout>
