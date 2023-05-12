@@ -22,15 +22,14 @@ export default function Header() {
   );
   return (
     <header className={styles.header}>
-      <div>
-        <h1 className={utilStyles.heading2XL}>Olá, eu sou {name}</h1>
-        <p className={styles.paragraph}>
-          Sou desenvolvedor web fullstack, <br />
-          moro em Pinhais - PR
-        </p>
-      </div>
       <section className={styles.container}>
-        <div className={styles.imageContainer}>{handleImageSize}</div>
+        <div>
+          <h1 className={utilStyles.heading2XL}>Olá, eu sou {name}</h1>
+          <p className={styles.paragraph}>
+            Sou desenvolvedor web fullstack, <br />
+            moro em Pinhais - PR
+          </p>
+        </div>
         <div className={styles.iconsContainer}>
           <a
             href="https://github.com/Andreyrvs"
@@ -41,8 +40,8 @@ export default function Header() {
               priority
               src={githubIcon}
               className={styles.icons}
-              height={50}
-              width={50}
+              height={25}
+              width={25}
               alt="logo github"
             />
           </a>
@@ -55,8 +54,8 @@ export default function Header() {
               priority
               src={linkedinIcon}
               className={styles.icons}
-              height={50}
-              width={50}
+              height={25}
+              width={25}
               alt="logo linkedin"
             />
           </a>

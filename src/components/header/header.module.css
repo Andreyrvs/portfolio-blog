@@ -1,9 +1,3 @@
-.container {
-  display: flex;
-  gap: 8rem;
-  justify-content: flex-start;
-}
-
 .header {
   display: flex;
   flex-direction: column;
@@ -11,7 +5,14 @@
   padding: 0;
 }
 
-.imageContainer {
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+/* .imageContainer {
   margin-left: 7px;
   position: relative;
   touch-action: manipulation;
@@ -29,12 +30,12 @@
   top: -7px;
   width: 100%;
   z-index: -1;
-}
+} */
 
 .iconsContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .icons {
