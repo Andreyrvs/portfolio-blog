@@ -1,5 +1,7 @@
 {
   "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-order"],
+
   "rules": {
     "selector-class-pattern": null,
     "media-feature-range-notation": null,
@@ -11,6 +13,14 @@
       {
         "ignoreAtRules": ["@value", "value", "@composes"]
       }
-    ]
+    ],
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      "at-rules",
+      "rules"
+    ],
+    "order/properties-alphabetical-order": true
   }
 }
