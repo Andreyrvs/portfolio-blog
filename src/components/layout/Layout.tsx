@@ -1,13 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/navbar/Navbar";
 import ScrollToTopButton from "@/components/scrollToTopButton/ScrollToTopButton";
-import utilStyles from "@/styles/utils.module.css";
 import styles from "./layout.module.css";
 
-const profileImage = "/images/profile.png";
-const name = "Andrey Rannerson Visniewski";
 export const siteTitle = "Andrey's Portfolio";
 
 export default function Layout({
@@ -36,19 +32,6 @@ export default function Layout({
     }
   };
 
-  const handleImageSize = home && (
-    <>
-      <Image
-        priority
-        src={profileImage}
-        className={styles.imageFit}
-        height={144}
-        width={144}
-        alt={name}
-      />
-    </>
-  );
-
   return (
     <div className={styles.container}>
       <Head>
@@ -56,11 +39,7 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
       </Head>
       <Navbar />
-      <header className={styles.header}>
-        <div className={styles.imageContainer}>{handleImageSize}</div>
-        <h1 className={utilStyles.heading2XL}>{name}</h1>
-      </header>
-      <main>
+      <main className={styles.main}>
         <ScrollToTopButton />
         {children}
       </main>

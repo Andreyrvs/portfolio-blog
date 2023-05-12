@@ -5,30 +5,12 @@
   padding: 0 1rem;
 }
 
-.header {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: row;
-  
-}
-
 .backToHome {
   margin: 3rem 0 0;
 }
 
 .main {
-  align-items: center;
-  display: flex;
-}
-
-.imageFit {
-  border-radius: 100%;
-  object-fit: contain;
-}
-
-.imageContainer {
-  -webkit-user-select: none;
-  user-select: none;
+  margin-top: 2rem;
 }
 
 
