@@ -14,8 +14,8 @@ export default function Header() {
         priority
         src={profileImage}
         className={styles.imageFit}
-        height={142}
-        width={175}
+        height={150}
+        width={150}
         alt={name}
       />
     </>

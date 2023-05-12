@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  gap: 5rem;
+  gap: 8rem;
   justify-content: flex-start;
 }
 
@@ -12,29 +12,23 @@
 }
 
 .imageContainer {
-  border: 1px solid black;
-  padding:0.875rem;
+  margin-left: 7px;
   position: relative;
   touch-action: manipulation;
   -webkit-user-select: none;
   user-select: none;
-  z-index: 1;
+  z-index: 10;
 }
-  
+
 .imageContainer::after {
+  border: 1px solid black;
   content: "";
-  height: calc(100% - 14px);
-  left: 7px;
-  opacity: 0;
+  height: 100%;
+  left: -7px;
   position: absolute;
-  top: 7px;
-  transition: opacity 0.2s ease-in-out;
-  width: calc(100% - 14px);
+  top: -7px;
+  width: 100%;
   z-index: -1;
-}
-  
-.imageContainer:hover::after {
-  opacity: 1;
 }
 
 .iconsContainer {
