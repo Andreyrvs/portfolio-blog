@@ -9,7 +9,7 @@ export function getAllPostIds() {
   const files = fs.readdirSync(path.join("src", "posts"));
   const paths = files.map((filename) => ({
     params: {
-      id: filename.replace(".mdx", ""),
+      id: filename.replace(/\.mdx$/, ""),
     },
   }));
 
@@ -17,7 +17,7 @@ export function getAllPostIds() {
 }
 
 export async function getPostData(id: string) {
-  const fullPath = path.join(postsDirectory, `${id} + .mdx`);
+  const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const markdownWithMeta = fs.readFileSync(fullPath);
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
