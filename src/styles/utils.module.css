@@ -50,6 +50,9 @@
 }
 
 .about {
-  margin-top: 4rem;
-  
+  margin-top: 4rem; 
+}
+
+.paragraph {
+  text-indent: 1rem;
 }

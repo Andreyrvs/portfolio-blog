@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "@/components/layout/Layout";
-import { presentation1, presentation2 } from "@/utils/text";
+import { resume, summary } from "@/utils/text";
 import Header from "@/components/header/Header";
 import utilStyles from "@/styles/utils.module.css";
 
@@ -15,9 +15,8 @@ export default function Home() {
       <Header />
       <section className={utilStyles.headingMd}>
         <h1 className={utilStyles.about}>Sobre</h1>
-        <p>
-          {presentation1}. {presentation2}
-        </p>
+        <p className={utilStyles.paragraph}>{summary}.</p>
+        <p className={utilStyles.paragraph}>{resume}</p>
       </section>
     </Layout>
   );

@@ -1,4 +1,5 @@
-@value card-background: #00ff5f;
+/* @value card-background: #00ff5f; */
+@value card-background: #F25C05;
 
 .scrollBtn {
   background-color: rgba(0, 0, 0, 0.2);

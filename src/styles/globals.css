@@ -1,9 +1,9 @@
+/* @value link-a: #0059C5; */
+@value link-a: #F25C05;
 
 html,
 body {
-  background-position: center center;
-  background-repeat: repeat;
-  background-size: cover;
+  background-color: #F2F2F2;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 18px;
   height: 100%;
@@ -18,11 +18,12 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: #781D01;
   text-decoration: none;
 }
 
 a:hover {
+  color: #F25C05;
   text-decoration: underline;
 }
 
