@@ -12,13 +12,15 @@ function Projetos({ repositories }: any) {
         name={repo.name}
         description={repo.description}
         html_url={repo.html_url}
+        homepage={repo.homepage}
       />
     )
   );
+
   return (
     <Layout>
-      <h1>Projetos</h1>
-      <div className={styles.card}>{handleRepositories}</div>
+      <h1>Projetos 📚</h1>
+      <ul className={styles.cardContainer}>{handleRepositories}</ul>
     </Layout>
   );
 }

@@ -1,19 +1,22 @@
+@value card-background: #00ff5f;
+
 .scrollBtn {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid black;
   bottom: 20px;
   cursor: pointer;
   outline: 0;
-  padding: 13px 20px;
+  padding: 13px 25px;
   position: fixed;
   right: 20px;
   touch-action: manipulation;
   -webkit-user-select: none;
   user-select: none;
+  z-index: 2;
 }
   
 .scrollBtn::after {
-  background-color: #ffe54c;
+  background-color: card-background;
   content: "";
   height: 100%;
   left: 7px;
@@ -29,9 +32,15 @@
   top: 0;
 }
 
-@media (min-width: 768px) {
+
+@media mobile-L, screen and (max-width: 425px) {
   .scrollBtn {
-    padding: 13px 50px;
+    padding: 8px 10px;
   }
 }
-    
+
+@media tablet, screen and (max-width: 768px) {
+  .scrollBtn {
+    padding: 13px 15px;
+  }
+}
