@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "csslint": "npx stylelint \"**/*.css\""
   },
   "dependencies": {
     "@react-pdf-viewer/default-layout": "^3.12.0",
