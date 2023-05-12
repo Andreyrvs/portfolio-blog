@@ -19,7 +19,7 @@ function Projetos({ repositories }: any) {
 
   return (
     <Layout>
-      <h1>Projetos</h1>
+      <h1>Projetos 📚</h1>
       <ul className={styles.cardContainer}>{handleRepositories}</ul>
     </Layout>
   );
