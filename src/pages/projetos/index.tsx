@@ -20,7 +20,7 @@ function Projetos({ repositories }: any) {
   return (
     <Layout>
       <h1>Projetos</h1>
-      <div className={styles.card}>{handleRepositories}</div>
+      <ul className={styles.cardContainer}>{handleRepositories}</ul>
     </Layout>
   );
 }
