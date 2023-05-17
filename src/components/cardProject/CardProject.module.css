@@ -27,7 +27,7 @@
   user-select: none;
   z-index: 1;
 }
-  
+
 .card::after {
   background-color: card-background;
   content: "";
@@ -41,6 +41,7 @@
 }
 
 .card:hover::after {
+  box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
   left: 0;
   top: 0;
 }
