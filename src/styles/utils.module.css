@@ -54,5 +54,9 @@
 }
 
 .paragraph {
+  margin: 4px;
+}
+
+.indent {
   text-indent: 1rem;
 }

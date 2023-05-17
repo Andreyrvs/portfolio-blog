@@ -25,8 +25,8 @@ export default function Header() {
       <section className={styles.container}>
         <div>
           <h1 className={utilStyles.heading2XL}>Olá, eu sou {name}</h1>
-          <p className={styles.paragraph}>
-            Sou desenvolvedor web fullstack, <br />
+          <p className={`styles.paragraph`}>
+            Sou desenvolvedor Web Fullstack, <br />
             moro em Pinhais - PR
           </p>
         </div>
