@@ -5,16 +5,16 @@ export default function Navbar() {
   return (
     <nav className={styles.container}>
       <ul className={styles.ul}>
-        <li>
+        <li className={styles.lis}>
           <Link href="/">Home</Link>
         </li>
-        <li>
+        <li className={styles.lis}>
           <Link href="/curriculum">Currículo</Link>
         </li>
-        <li>
+        <li className={styles.lis}>
           <Link href="/blog">Blog</Link>
         </li>
-        <li>
+        <li className={styles.lis}>
           <Link href="/projects">Projetos</Link>
         </li>
       </ul>

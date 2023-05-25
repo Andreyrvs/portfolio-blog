@@ -1,20 +1,26 @@
 /* @value link-a: #0059C5; */
 @value link-a: #F25C05;
 
-html,
-body {
-  background-color: #F9F9F9;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 18px;
-  height: 100%;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+html {
+  color-scheme: light dark;
 }
 
-* {
-  box-sizing: border-box;
+body {
+  background-color: #F9F9F9;
+  font-family: system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+img,
+picture,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  margin-inline: auto;
 }
 
 a {
@@ -27,9 +33,3 @@ a:hover {
   text-decoration: underline;
 }
 
-img,
-picture,
-video {
-  display: block;
-  max-width: 100%;
-}
