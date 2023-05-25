@@ -9,7 +9,7 @@ export default function Home() {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
-        <link rel="icon" type="image/svg" href="/blog-svgrepo-com.svg" />
+        <link rel="icon" type="image/svg" href="/blog.ico" />
         <meta name="description" content="Andrey's portfolio home page" />
       </Head>
       <Header />
