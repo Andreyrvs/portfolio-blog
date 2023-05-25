@@ -4,11 +4,12 @@ import matter from "gray-matter";
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps } from "next";
-import Layout, { siteTitle } from "@/components/layout/Layout";
+import Layout from "@/components/layout/Layout";
 import utilStyles from "@/styles/utils.module.css";
 import Date from "@/components/Date";
 import Props from "@/types/Props";
 
+export const siteTitle = "Andrey's Blog";
 const POST_ROUTE = "/blog/";
 
 export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
@@ -39,7 +40,7 @@ export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
     <Layout>
       <Head>
         <title>{siteTitle}</title>
-        <meta name="description" content="Andrey's blog home page, " />
+        <meta name="og:title" content={siteTitle} />
       </Head>
       <section>
         <h1 className={utilStyles.headingXl}>Blog ✍🏼</h1>

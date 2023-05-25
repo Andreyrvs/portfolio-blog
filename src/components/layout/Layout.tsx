@@ -4,8 +4,6 @@ import Navbar from "@/components/navbar/Navbar";
 import ScrollToTopButton from "@/components/scrollToTopButton/ScrollToTopButton";
 import styles from "./layout.module.css";
 
-export const siteTitle = "Andrey's Portfolio";
-
 export default function Layout({
   children,
   home,
@@ -34,10 +32,6 @@ export default function Layout({
 
   return (
     <div className={styles.container}>
-      <Head>
-        <meta name="blog" content="Pagina inicial do site pessoal" />
-        <meta name="og:title" content={siteTitle} />
-      </Head>
       <Navbar />
       <main className={styles.main}>
         <ScrollToTopButton />

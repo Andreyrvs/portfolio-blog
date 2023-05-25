@@ -1,8 +1,10 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "@/components/layout/Layout";
+import Layout from "@/components/layout/Layout";
 import { resume, summary } from "@/utils/text";
 import Header from "@/components/header/Header";
 import utilStyles from "@/styles/utils.module.css";
+
+export const siteTitle = "Andrey's Portfolio";
 
 export default function Home() {
   return (
@@ -10,7 +12,8 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
         <link rel="icon" type="image/svg" href="/blog.ico" />
-        <meta name="description" content="Andrey's portfolio home page" />
+        <meta name="og:description" content="Andrey's portfolio home page" />
+        <meta name="og:title" content={siteTitle} />
       </Head>
       <Header />
       <section className={utilStyles.headingMd}>
