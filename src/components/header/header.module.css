@@ -28,6 +28,7 @@
   opacity: 100%;
 }
 
-.paragraph {
-  font-weight: 300;
+.profession {
+  font-size: 40px;
+  margin: 0;
 }
