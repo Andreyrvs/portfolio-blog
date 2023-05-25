@@ -4,7 +4,7 @@ import utilStyles from "@/styles/utils.module.css";
 
 const name = "Andrey 👋🏼";
 const githubIcon2 = "/github-mark.svg";
-const linkedinIcon = "/images/linkedin-161.svg";
+const linkedinIcon = "/linkedin.svg";
 
 export default function Header() {
   return (
