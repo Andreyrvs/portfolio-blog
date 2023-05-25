@@ -10,9 +10,12 @@ import Date from "@/components/Date";
 import Props from "@/types/Props";
 
 const siteTitle = "Andrey's Blog";
+const siteDescription = "Andrey's blog home page";
 const POST_ROUTE = "/blog/";
 
 export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
+  console.log(sortedPosts);
+
   const listItems = sortedPosts.map(
     ({ frontMatter: { description, tags, date, id, title } }, index) => (
       <li className={utilStyles.listItem} key={index}>
@@ -41,6 +44,7 @@ export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
       <Head>
         <title>{siteTitle}</title>
         <meta name="og:title" content={siteTitle} />
+        <meta name="og:description" content={siteDescription} />
       </Head>
       <section>
         <h1 className={utilStyles.headingXl}>Blog ✍🏼</h1>

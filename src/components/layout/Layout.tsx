@@ -34,6 +34,9 @@ export default function Layout({
     <>
       <Head>
         <link rel="icon" type="image/svg" href="/blog.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Andrey R. Visniewski" />
+        <meta charSet="utf-8" />
       </Head>
       <div className={styles.container}>
         <Navbar />

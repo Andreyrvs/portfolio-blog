@@ -16,7 +16,7 @@ const WHITE_SPACE = " ";
 
 export default function Post(props: Props): JSX.Element {
   const {
-    frontMatter: { title, tags, date },
+    frontMatter: { title, tags, date, description, id },
     mdxSource,
   } = props;
 
@@ -28,10 +28,10 @@ export default function Post(props: Props): JSX.Element {
     <Layout blog>
       <Head>
         <title>{title}</title>
-        <meta
-          name="description"
-          content="Page with the list of all posts, all content is dynamically generated through MDX."
-        />
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+        <link rel="canonical" href={`https://andreyrv.dev/blog/${id}`} />
+        <meta name="keywords" content={String(tags)} />
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{title}</h1>
