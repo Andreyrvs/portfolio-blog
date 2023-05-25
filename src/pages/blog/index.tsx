@@ -9,7 +9,7 @@ import utilStyles from "@/styles/utils.module.css";
 import Date from "@/components/Date";
 import Props from "@/types/Props";
 
-export const siteTitle = "Andrey's Blog";
+const siteTitle = "Andrey's Blog";
 const POST_ROUTE = "/blog/";
 
 export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {

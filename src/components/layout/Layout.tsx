@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/navbar/Navbar";
 import ScrollToTopButton from "@/components/scrollToTopButton/ScrollToTopButton";
 import styles from "./layout.module.css";
-
+<link rel="icon" type="image/svg" href="/blog.ico" />;
 export default function Layout({
   children,
   home,
@@ -31,14 +31,18 @@ export default function Layout({
   };
 
   return (
-    <div className={styles.container}>
-      <Navbar />
-      <main className={styles.main}>
-        <ScrollToTopButton />
-        {children}
-      </main>
-
-      {handleBackToHome()}
-    </div>
+    <>
+      <Head>
+        <link rel="icon" type="image/svg" href="/blog.ico" />
+      </Head>
+      <div className={styles.container}>
+        <Navbar />
+        <main className={styles.main}>
+          <ScrollToTopButton />
+          {children}
+        </main>
+        <>{handleBackToHome()}</>
+      </div>
+    </>
   );
 }
