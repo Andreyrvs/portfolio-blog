@@ -2,7 +2,6 @@ import Head from "next/head";
 import Layout from "@/components/layout/Layout";
 import { resume, summary } from "@/utils/text";
 import Header from "@/components/header/Header";
-import utilStyles from "@/styles/utils.module.css";
 
 const siteTitle = "Andrey's Portfolio";
 const siteDescription = "Portfolio home page";
@@ -16,7 +15,7 @@ export default function Home() {
         <meta name="title" content={siteTitle} />
       </Head>
       <Header />
-      <section className={utilStyles.headingMd}>
+      <section>
         <p>{summary}.</p>
         <p>{resume}</p>
       </section>

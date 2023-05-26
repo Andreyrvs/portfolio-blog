@@ -5,7 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import Layout from "@/components/layout/Layout";
-import utilStyles from "@/styles/utils.module.css";
+import utilStyles from "@/styles/blog.module.css";
 import Date from "@/components/Date";
 import Props from "@/types/Props";
 

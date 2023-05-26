@@ -17,14 +17,14 @@
 
 .iconsContainer {
   display: flex;
-  gap:  0.5rem;
+  gap:  1rem;
 }
 
 .icons {
   opacity: 50%;
 }
 
-.icons:hover .icons:active {
+.icons:hover {
   opacity: 100%;
 }
 
