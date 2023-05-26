@@ -13,6 +13,7 @@
 .name {
   font-size: large;
   margin: 0;
+  padding: 0;
 }
 
 .iconsContainer {
@@ -29,6 +30,6 @@
 }
 
 .profession {
-  font-size: 40px;
+  font-size: 2.2em;
   margin: 0;
 }

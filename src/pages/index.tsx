@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Layout from "@/components/layout/Layout";
-import { resume, summary } from "@/utils/text";
+import { resume } from "@/utils/text";
 import Header from "@/components/header/Header";
+import styles from "@/styles/home.module.css";
 
 const siteTitle = "Andrey's Portfolio";
 const siteDescription = "Portfolio home page";
@@ -16,8 +17,7 @@ export default function Home() {
       </Head>
       <Header />
       <section>
-        <p>{summary}.</p>
-        <p>{resume}</p>
+        <p className={styles.paragraph}>{resume}</p>
       </section>
     </Layout>
   );
