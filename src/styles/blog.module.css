@@ -1,0 +1,15 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  background-color: #ededed;
+  margin: 0 0 1.25rem;
+}
+
+.lightText {
+  color: #666;
+}
+

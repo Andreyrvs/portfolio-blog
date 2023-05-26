@@ -3,9 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/navbar/Navbar";
 import ScrollToTopButton from "@/components/scrollToTopButton/ScrollToTopButton";
 import styles from "./layout.module.css";
-
-export const siteTitle = "Andrey's Portfolio";
-
+<link rel="icon" type="image/svg" href="/blog.ico" />;
 export default function Layout({
   children,
   home,
@@ -33,18 +31,21 @@ export default function Layout({
   };
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <meta name="blog" content="Pagina inicial do site pessoal" />
-        <meta name="og:title" content={siteTitle} />
+        <link rel="icon" type="image/svg" href="/blog.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Andrey R. Visniewski" />
+        <meta charSet="utf-8" />
       </Head>
-      <Navbar />
-      <main className={styles.main}>
-        <ScrollToTopButton />
-        {children}
-      </main>
-
-      {handleBackToHome()}
-    </div>
+      <div className={styles.container}>
+        <Navbar />
+        <main className={styles.main}>
+          <ScrollToTopButton />
+          {children}
+        </main>
+        <>{handleBackToHome()}</>
+      </div>
+    </>
   );
 }

@@ -1,22 +1,23 @@
-import Head from "next/head";
-import Layout from "@/components/layout/Layout";
-import Date from "@/components/Date";
-import utilStyles from "@/styles/utils.module.css";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Head from "next/head";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import Props from "@/types/Props";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import Layout from "@/components/layout/Layout";
+import Date from "@/components/Date";
 import Code from "@/components/Code";
+import Props from "@/types/Props";
+import utilStyles from "@/styles/blog.module.css";
+
 const components = { Code, SyntaxHighlighter };
 
 const WHITE_SPACE = " ";
 
 export default function Post(props: Props): JSX.Element {
   const {
-    frontMatter: { title, tags, date },
+    frontMatter: { title, tags, date, description, id },
     mdxSource,
   } = props;
 
@@ -28,13 +29,13 @@ export default function Post(props: Props): JSX.Element {
     <Layout blog>
       <Head>
         <title>{title}</title>
-        <meta
-          name="description"
-          content="Page with the list of all posts, all content is dynamically generated through MDX."
-        />
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+        <link rel="canonical" href={`https://andreyrv.dev/blog/${id}`} />
+        <meta name="keywords" content={String(tags)} />
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{title}</h1>
+        <h1>{title}</h1>
         <div>{listTags}</div>
         <div className={utilStyles.lightText}>
           <Date dateString={date} />

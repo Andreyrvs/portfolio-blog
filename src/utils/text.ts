@@ -1,4 +1,2 @@
-export const summary =
-  "Estou buscando uma oportunidade na área de desenvolvimento web, estou em processo de transição de carreira";
 export const resume =
-  "Decidi me especializar na área de tecnologia após alguns anos trabalhando em serviços braçais que eram repetitivos e exigiam pouco conhecimento. Agora, estou animado para me desenvolver em tecnologias como TypeScript, Next.js, Prisma, para solucionar desafios em minha carreira.";
+  "Após trabalhar por muito tempo em serviços que não me desafiavam nem me motivavam, resolvi mudar de área e me dedicar à tecnologia. Estou muito empolgado para aprender e aplicar tecnologias como JavaScript, TypeScript, React, Node.js e Python. Tenho interesse em atuar como Desenvolvedor Web..";

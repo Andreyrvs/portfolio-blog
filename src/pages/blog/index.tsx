@@ -4,14 +4,18 @@ import matter from "gray-matter";
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps } from "next";
-import Layout, { siteTitle } from "@/components/layout/Layout";
-import utilStyles from "@/styles/utils.module.css";
+import Layout from "@/components/layout/Layout";
+import utilStyles from "@/styles/blog.module.css";
 import Date from "@/components/Date";
 import Props from "@/types/Props";
 
+const siteTitle = "Andrey's Blog";
+const siteDescription = "Andrey's blog home page";
 const POST_ROUTE = "/blog/";
 
 export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
+  console.log(sortedPosts);
+
   const listItems = sortedPosts.map(
     ({ frontMatter: { description, tags, date, id, title } }, index) => (
       <li className={utilStyles.listItem} key={index}>
@@ -39,8 +43,8 @@ export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
     <Layout>
       <Head>
         <title>{siteTitle}</title>
-        <link rel="icon" type="image/svg" href="/blog-svgrepo-com.svg" />
-        <meta name="description" content="Andrey's blog home page, " />
+        <meta name="og:title" content={siteTitle} />
+        <meta name="og:description" content={siteDescription} />
       </Head>
       <section>
         <h1 className={utilStyles.headingXl}>Blog ✍🏼</h1>
