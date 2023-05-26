@@ -6,12 +6,6 @@
   margin-bottom: 1rem;
 }
 
-/* 
-.headingMd {
-  font-size: 1.2rem;
-  line-height: 1.5;
-} */
-
 .list {
   list-style: none;
   margin: 0;
@@ -27,16 +21,3 @@
 .lightText {
   color: #666;
 }
-
-/* 
-.about {
-  margin-top: 2rem; 
-}
-
-.paragraph {
-  margin: 4px;
-}
-
-.indent {
-  text-indent: 1rem;
-} */

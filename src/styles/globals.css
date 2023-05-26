@@ -5,8 +5,7 @@ html {
 body {
   background-color: #F9F9F9;
   font-family: system-ui, sans-serif;
-
-  /* font-size: 1.125rem; */
+  font-size: 1.125rem;
   line-height: 1.5;
 }
 
