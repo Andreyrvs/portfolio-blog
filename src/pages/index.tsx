@@ -17,7 +17,6 @@ export default function Home() {
       </Head>
       <Header />
       <section className={utilStyles.headingMd}>
-        <h1 className={utilStyles.about}>Sobre</h1>
         <p className={utilStyles.paragraph}>{summary}.</p>
         <p className={`${utilStyles.indent} ${utilStyles.paragraph}`}>
           {resume}

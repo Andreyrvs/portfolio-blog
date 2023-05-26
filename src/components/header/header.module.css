@@ -24,7 +24,7 @@
   opacity: 50%;
 }
 
-.icons:hover {
+.icons:hover .icons:active {
   opacity: 100%;
 }
 
