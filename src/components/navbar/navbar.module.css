@@ -1,11 +1,9 @@
 .container {
   display: flex;
-
 }
 
 .ul {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   list-style-type: none;
   margin: 0;
@@ -13,11 +11,6 @@
   width: 100%;
 }
 
-.lis {
-  padding: 0 12px;
-}
-
 .lis:hover {
-  background-color: rgba(234, 234, 234, 0.8);
   border-radius: 10%;
 }
