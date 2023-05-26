@@ -5,14 +5,15 @@ import Header from "@/components/header/Header";
 import utilStyles from "@/styles/utils.module.css";
 
 const siteTitle = "Andrey's Portfolio";
+const siteDescription = "Portfolio home page";
 
 export default function Home() {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
-        <meta name="og:description" content="Andrey's portfolio home page" />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="description" content={siteDescription} />
+        <meta name="title" content={siteTitle} />
       </Head>
       <Header />
       <section className={utilStyles.headingMd}>

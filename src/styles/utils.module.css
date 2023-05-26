@@ -6,10 +6,11 @@
   margin-bottom: 1rem;
 }
 
+/* 
 .headingMd {
   font-size: 1.2rem;
   line-height: 1.5;
-}
+} */
 
 .list {
   list-style: none;
@@ -27,6 +28,7 @@
   color: #666;
 }
 
+/* 
 .about {
   margin-top: 2rem; 
 }
@@ -37,4 +39,4 @@
 
 .indent {
   text-indent: 1rem;
-}
+} */
