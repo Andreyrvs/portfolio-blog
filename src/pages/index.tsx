@@ -11,42 +11,27 @@ import styles2 from "@/components/cardProject/CardProject.module.css";
 const siteTitle = "Andrey's Portfolio";
 const siteDescription = "Portfolio home page";
 
-import React from "react";
-
-// type GithubRepo = {
-//   full_name: string;
-//   description: string;
-//   html_url: string;
-//   topics?: string[];
-// };
-
 type Props = {
   repositories: GithubRepo[];
 };
-export default function Home({ repositories }: Props) {
-  const { topics } = repositories;
-  console.log(topics && topics);
 
-  const reposDisplayed = ["Tryunfo React", "Trybe Wallet"];
-  const filterRepositories = repositories.filter(({ topics }: GithubRepo) => {
-    if (topics && reposDisplayed.includes(topics)) {
-      return topics;
-    }
-  });
+export default function Home({ repositories }: Props) {
+  const filterRepositories = repositories.filter(
+    ({ topics }: GithubRepo) => topics && topics.includes("frontend")
+  );
 
   console.log("🔥🔥🔥🔥", filterRepositories);
 
-  const handleRepositories = filterRepositories.map(
-    (repo: GithubRepo, index: number) => (
-      <CardProject
-        key={index}
-        name={repo.name}
-        description={repo.description}
-        html_url={repo.html_url}
-        homepage={repo.homepage}
-      />
-    )
-  );
+  const handleRepositories = filterRepositories.map((repo: GithubRepo) => (
+    <CardProject
+      key={repo.id}
+      name={repo.name}
+      description={repo.description}
+      html_url={repo.html_url}
+      homepage={repo.homepage}
+    />
+  ));
+
   return (
     <Layout home>
       <Head>
