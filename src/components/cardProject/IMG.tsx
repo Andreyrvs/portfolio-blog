@@ -15,8 +15,6 @@ export default function IMG({
     return removeWithSpaces;
   };
 
-  console.log(name);
-
   const handleHomePage = homepage && (
     <a href={homepage} target="_blank" rel="noopener noreferrer">
       Preview
