@@ -5,6 +5,7 @@ type GithubRepo = {
   html_url?: string;
   homepage?: string;
   topics?: string[];
+  src?: string;
 };
 
 export default GithubRepo;
