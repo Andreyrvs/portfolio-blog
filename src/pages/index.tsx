@@ -5,8 +5,9 @@ import Header from "@/components/header/Header";
 import styles from "@/styles/home.module.css";
 import GetGithubRepos from "@/utils/GetGithubRepos";
 import GithubRepo from "@/types/GithubRepo";
-import CardProject from "@/components/cardProject/CardProject";
+import IMG from "@/components/cardProject/IMG";
 import styles2 from "@/components/cardProject/CardProject.module.css";
+import styles23 from "@/components/cardProject/Img.module.css";
 
 const siteTitle = "Andrey's Portfolio";
 const siteDescription = "Portfolio home page";
@@ -23,7 +24,7 @@ export default function Home({ repositories }: Props) {
   console.log("🔥🔥🔥🔥", filterRepositories);
 
   const handleRepositories = filterRepositories.map((repo: GithubRepo) => (
-    <CardProject
+    <IMG
       key={repo.id}
       name={repo.name}
       description={repo.description}
@@ -45,7 +46,7 @@ export default function Home({ repositories }: Props) {
       </section>
       <section>
         <h1>Projetos 📚</h1>
-        <ul className={styles2.cardContainer}>{handleRepositories}</ul>
+        <ul className={styles23.cardContainer}>{handleRepositories}</ul>
       </section>
     </Layout>
   );
