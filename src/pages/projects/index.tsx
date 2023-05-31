@@ -19,7 +19,6 @@ function Projetos({ repositories }: any) {
       />
     )
   );
-
   return (
     <Layout>
       <Head>
