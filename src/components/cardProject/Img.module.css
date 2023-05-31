@@ -4,7 +4,7 @@
 .cardContainer {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -41,11 +41,16 @@
   margin: text-margin;
 }
 
-/* @media mobile-L, screen and (min-width: 425px) {
+.name {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem;
+}
+
+@media mobile-L, screen and (min-width: 425px) {
   .cardContainer {
-    grid-template-columns:  1fr;
+    grid-template-columns:  repeat(2, 1fr);
   }
-  
 }
 
 @media tablet, screen and (min-width: 768px) {
@@ -67,8 +72,8 @@
   }
 }
 
-@media four-k, screen and (min-width: 2560px) {
+/* @media four-k, screen and (min-width: 2560px) {
   .cardContainer {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }  */

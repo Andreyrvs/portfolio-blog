@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./Img.module.css";
 import GithubRepo from "@/types/GithubRepo";
-import { useState } from "react";
 
 export default function IMG({
   name,
@@ -9,8 +8,6 @@ export default function IMG({
   html_url,
   homepage,
 }: GithubRepo) {
-  const [isOpen, setIsOpen] = useState(false);
-
   const handleWhiteSpaces = (name: string = "empty") => {
     const newStr = name.replace(/[-\d]/g, " ");
     const removeWithSpaces = newStr.trim();
@@ -18,9 +15,11 @@ export default function IMG({
     return removeWithSpaces;
   };
 
+  console.log(name);
+
   const handleHomePage = homepage && (
     <a href={homepage} target="_blank" rel="noopener noreferrer">
-      Live
+      Preview
     </a>
   );
 
@@ -34,12 +33,14 @@ export default function IMG({
           height={564}
           alt="mock"
         />
-        <h1 className={styles.header}>{handleWhiteSpaces(name)}</h1>
-        <div className={styles.links}>
-          <a className={styles.font} href={html_url} target="_blank">
-            Repositório
-          </a>
-          <small>{handleHomePage}</small>
+        <div className={styles.name}>
+          <h1 className={styles.header}>{handleWhiteSpaces(name)}</h1>
+          <div className={styles.links}>
+            <a className={styles.font} href={html_url} target="_blank">
+              Repositório
+            </a>
+            <small>{handleHomePage}</small>
+          </div>
         </div>
       </li>
     </>
