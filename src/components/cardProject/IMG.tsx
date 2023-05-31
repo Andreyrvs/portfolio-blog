@@ -7,6 +7,7 @@ export default function IMG({
   description,
   html_url,
   homepage,
+  src,
 }: GithubRepo) {
   const handleWhiteSpaces = (name: string = "empty") => {
     const newStr = name.replace(/[-\d]/g, " ");
@@ -26,7 +27,7 @@ export default function IMG({
       <li className={styles.card}>
         <Image
           className={styles.imagem}
-          src="/1mockup-mac.png"
+          src={`/mockups/${src}.png`}
           width={904}
           height={564}
           alt="mock"
