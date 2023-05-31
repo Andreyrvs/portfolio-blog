@@ -24,17 +24,6 @@ export default function IMG({
     </a>
   );
 
-  const handleButtonClick = () => setIsOpen(true);
-  const handleCloseClick = () => setIsOpen(false);
-
-  const handleModal = isOpen && (
-    <dialog open={isOpen}>
-      <p className={styles.font}>{description}</p>
-
-      <button onClick={handleCloseClick}>Fechar modal</button>
-    </dialog>
-  );
-
   return (
     <>
       <li className={styles.card}>
