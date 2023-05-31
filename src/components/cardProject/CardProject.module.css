@@ -1,5 +1,3 @@
-/* @value card-background: #ffe54c; */
-@value card-background: #F2CF66;
 @value card-height: 10.625rem;
 @value text-margin: 0;
 
@@ -14,36 +12,18 @@
 
 .card {
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid #7d7d7ddf;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   height: card-height;
   justify-content: space-between;
   padding: 0.5rem 0.875rem;
-  position: relative;
   touch-action: manipulation;
-  -webkit-user-select: none;
-  user-select: none;
-  z-index: 1;
 }
 
-.card::after {
-  background-color: card-background;
-  content: "";
-  height: 100%;
-  left: 7px;
-  position: absolute;
-  top: 7px;
-  transition: 0.2s;
-  width: 100%;
-  z-index: -1;
-}
-
-.card:hover::after {
+.card:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
-  left: 0;
-  top: 0;
 }
 
 .font {
@@ -62,12 +42,11 @@
   margin: text-margin;
 }
 
-
 @media mobile-L, screen and (min-width: 425px) {
   .cardContainer {
-    grid-template-columns:  repeat(2, 1fr);
+    grid-template-columns:  1fr;
   }
-
+  
 }
 
 @media tablet, screen and (min-width: 768px) {
@@ -93,4 +72,4 @@
   .cardContainer {
     grid-template-columns: repeat(6, 1fr);
   }
-}
+} 
