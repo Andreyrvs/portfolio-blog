@@ -6,26 +6,27 @@ import styles from "@/styles/home.module.css";
 import GetGithubRepos from "@/utils/GetGithubRepos";
 import GithubRepo from "@/types/GithubRepo";
 import IMG from "@/components/cardProject/IMG";
-import styles2 from "@/components/cardProject/CardProject.module.css";
+// import styles2 from "@/components/cardProject/CardProject.module.css";
 import styles23 from "@/components/cardProject/Img.module.css";
+import handleFiles from "@/lib/mocks";
 
 const siteTitle = "Andrey's Portfolio";
 const siteDescription = "Portfolio home page";
 
 type Props = {
   repositories: GithubRepo[];
+  imagesMockups: string[];
 };
 
-export default function Home({ repositories }: Props) {
-  const filterRepositories = repositories.filter(
-    ({ topics }: GithubRepo) => topics && topics.includes("frontend")
-  );
-
-  const names = ["13-Tryunfo-React", "14-React-Trybe-Tunes", "20-Recipes-App"];
+export default function Home({ repositories, imagesMockups }: Props) {
+  // const filterRepositories = repositories.filter(
+  //   ({ topics }: GithubRepo) => topics && topics.includes("frontend")
+  // );
 
   const isDisplayed = repositories.filter((repo: GithubRepo) =>
-    names.find((name) => repo.name && name === repo.name)
+    imagesMockups.find((name) => repo.name && name === repo.name)
   );
+
   const handleRepositories = isDisplayed.map((repo: GithubRepo) => (
     <IMG
       key={repo.id}
@@ -33,6 +34,7 @@ export default function Home({ repositories }: Props) {
       description={repo.description}
       html_url={repo.html_url}
       homepage={repo.homepage}
+      src={repo.name}
     />
   ));
 
@@ -57,9 +59,11 @@ export default function Home({ repositories }: Props) {
 
 export async function getStaticProps() {
   const repositories = await GetGithubRepos();
+  const imagesMockups = handleFiles();
   return {
     props: {
       repositories,
+      imagesMockups,
     },
   };
 }
