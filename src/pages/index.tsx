@@ -21,9 +21,12 @@ export default function Home({ repositories }: Props) {
     ({ topics }: GithubRepo) => topics && topics.includes("frontend")
   );
 
-  console.log("🔥🔥🔥🔥", filterRepositories);
+  const names = ["13-Tryunfo-React", "14-React-Trybe-Tunes", "20-Recipes-App"];
 
-  const handleRepositories = filterRepositories.map((repo: GithubRepo) => (
+  const isDisplayed = repositories.filter((repo: GithubRepo) =>
+    names.find((name) => repo.name && name === repo.name)
+  );
+  const handleRepositories = isDisplayed.map((repo: GithubRepo) => (
     <IMG
       key={repo.id}
       name={repo.name}
