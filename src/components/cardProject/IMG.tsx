@@ -24,31 +24,20 @@ export default function IMG({
     </a>
   );
 
-  const handleButtonClick = () => {
-    setIsOpen(true);
-  };
-  const handleCloseClick = () => {
-    setIsOpen(false);
-  };
+  const handleButtonClick = () => setIsOpen(true);
+  const handleCloseClick = () => setIsOpen(false);
 
   const handleModal = isOpen && (
-    <dialog open>
-      <h1 className={styles.header}>{handleWhiteSpaces(name)}</h1>
+    <dialog open={isOpen}>
       <p className={styles.font}>{description}</p>
-      <div className={styles.links}>
-        <a className={styles.font} href={html_url} target="_blank">
-          Repositório
-        </a>
-        <small>{handleHomePage}</small>
-      </div>
+
       <button onClick={handleCloseClick}>Fechar modal</button>
     </dialog>
   );
 
   return (
     <>
-      <li onClick={handleButtonClick} className={styles.card}>
-        <>{handleModal}</>
+      <li className={styles.card}>
         <Image
           className={styles.imagem}
           src="/1mockup-mac.png"
@@ -56,6 +45,13 @@ export default function IMG({
           height={564}
           alt="mock"
         />
+        <h1 className={styles.header}>{handleWhiteSpaces(name)}</h1>
+        <div className={styles.links}>
+          <a className={styles.font} href={html_url} target="_blank">
+            Repositório
+          </a>
+          <small>{handleHomePage}</small>
+        </div>
       </li>
     </>
   );
