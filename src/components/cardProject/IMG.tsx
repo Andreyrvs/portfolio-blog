@@ -31,6 +31,7 @@ export default function IMG({
           width={904}
           height={564}
           alt="mock"
+          loading="lazy"
         />
         <div className={styles.name}>
           <h1 className={styles.header}>{handleWhiteSpaces(name)}</h1>
