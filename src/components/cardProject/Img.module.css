@@ -50,6 +50,7 @@
   gap: .25rem;
   justify-content: space-evenly;
   margin: text-margin;
+  
 }
 
 .link p {
@@ -71,6 +72,10 @@
   justify-content: space-between;
   padding: 6px;
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.link:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px -1px, rgba(0, 0, 0, 0.06) 0 2px 4px -1px;
 }
 
 .arrow {
@@ -118,7 +123,7 @@
     display: flex;
     font-size: 12px;
     font-weight: 500;
-    padding: 12px;
+    padding: 10px;
   }
 
   .arrow {
@@ -133,19 +138,19 @@
   }
 
   .header {
-    font-size: large;
+    font-size: larger;
   }
 
   .link {
     display: flex;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    padding: 12px;
+    padding: 10px;
   }
 
   .arrow {
-    height: 9px;
-    width: 9px ;
+    height: 11px;
+    width:11px ;
   }
 }
 
