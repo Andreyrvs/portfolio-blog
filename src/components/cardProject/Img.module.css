@@ -17,11 +17,10 @@
 }
 
 .card {
-  border: 1px  #ccc;
+  border-bottom: 1px solid  #e1e1e1;
   display: flex;
   flex-direction: column;
-  
-  /* gap: 0.5rem; */
+  gap: 0.5rem;
   touch-action: manipulation;
 }
 
@@ -32,23 +31,51 @@
 
 .header {
   align-self: center;
-  font-size: large;
-  margin: text-margin;
-  margin: 0;
-}
-
-.links {
-  align-items: center;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
+  font-size: small;
   margin: text-margin;
   margin: 0;
 }
 
 .name {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.links_container {
+  align-items: center;
+  display: flex;
+  gap: .25rem;
+  justify-content: space-evenly;
+  margin: text-margin;
+}
+
+.link p {
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  align-items: center;
+  background-color:  #FFF;
+  border: 1px solid  #E5E5E5;
+  border-radius: 8px;
+  color:  #262626;
+  cursor: pointer;
+  display: flex;
+  font-size: 10px;
+  font-weight: 500;;
+  gap: 0.15rem;
+  justify-content: space-between;
+  padding: 6px;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.arrow {
+  height: 7px;
+  width: 7px ;
 }
 
 /* @media mobile-L, screen and (min-width: 425px) {
@@ -57,12 +84,25 @@
   }
 } */
 
-/* @media tablet, screen and (min-width: 768px) {
+@media tablet, screen and (min-width: 768px) {
   .cardContainer {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .header {
+    font-size: medium;
+  }
 
-} */
+  .link {
+    display: flex;
+    font-size: 10px;
+    font-weight: 500;
+    gap: 0.15rem;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+}
 
 
 @media laptop, screen and (min-width: 1024px) {
@@ -70,13 +110,44 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .header {
+    font-size: large;
+  }
+
+  .link {
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 12px;
+  }
+
+  .arrow {
+    height: 9px;
+    width: 9px ;
+  }
 }
 
-/* @media laptop-L, screen and (min-width: 1440px) {
+@media laptop-L, screen and (min-width: 1440px) {
   .cardContainer {
     grid-template-columns: repeat(3, 1fr);
   }
-} */
+
+  .header {
+    font-size: large;
+  }
+
+  .link {
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 12px;
+  }
+
+  .arrow {
+    height: 9px;
+    width: 9px ;
+  }
+}
 
 /* @media four-k, screen and (min-width: 2560px) {
   .cardContainer {
