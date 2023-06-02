@@ -39,12 +39,13 @@ function ScrollToTopButton() {
       onClick={handleClick}
       className={style.scrollBtn}
     >
-      <Image
+      <div className="up"></div>
+      {/* <Image
         src={ArrowUp}
         alt="Seta apontando para o topo da página"
         width={75}
         height={50}
-      />
+      /> */}
     </button>
   );
 
