@@ -25,14 +25,6 @@ export default function IMG({
   return (
     <>
       <li className={styles.card}>
-        <Image
-          className={styles.imagem}
-          src={`/mockups/${src}.png`}
-          width={904}
-          height={564}
-          alt="mock"
-          loading="lazy"
-        />
         <div className={styles.name}>
           <h1 className={styles.header}>{handleWhiteSpaces(name)}</h1>
           <div className={styles.links}>
@@ -42,6 +34,14 @@ export default function IMG({
             <small>{handleHomePage}</small>
           </div>
         </div>
+        <Image
+          className={styles.imagem}
+          src={`/mockups/${src}.png`}
+          width={904}
+          height={564}
+          alt="mock"
+          loading="lazy"
+        />
       </li>
     </>
   );
