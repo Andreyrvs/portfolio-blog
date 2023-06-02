@@ -4,13 +4,36 @@
 
 .ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   list-style-type: none;
   margin: 0;
   padding: 0.25rem;
   width: 100%;
 }
 
+.lis {
+  align-items: center;
+  background-color:  #FFF;
+  border: 1px solid  #E5E5E5;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  height: 1.5rem;
+  justify-content: center;
+  padding: 6px 20px;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  width: 6.5rem;
+}
+
 .lis:hover {
-  border-radius: 10%;
+  background-color: #f3f4f6;
+}
+
+.lis:hover a {
+  color: #F25C05;
+  text-decoration: underline;
+}
+
+.text {
+  color:  #262626;
 }
