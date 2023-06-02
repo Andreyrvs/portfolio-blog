@@ -9,9 +9,11 @@ import Layout from "@/components/layout/Layout";
 import Date from "@/components/Date";
 import Code from "@/components/Code";
 import Props from "@/types/Props";
+import Kbd from "@/components/kbd/Kbd";
+import Kbd2 from "@/components/kbd/KbdPlus";
 import utilStyles from "@/styles/blog.module.css";
 
-const components = { Code, SyntaxHighlighter };
+const components = { Code, SyntaxHighlighter, Kbd, Kbd2 };
 
 const WHITE_SPACE = " ";
 
