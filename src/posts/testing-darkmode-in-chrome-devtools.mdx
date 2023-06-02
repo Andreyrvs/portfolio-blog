@@ -1,0 +1,32 @@
+---
+title: "Renderizando darkmode do seu site no Chrome DevTools"
+date: "2023-06-02 18:29"
+description: "Como testar o darkmode no Chrome DevTools"
+thumbnailUrl: "/images/profile.png"
+tags: ["chrome", "devtools", "darkmode"]
+---
+
+Você já se perguntou como testar seu DarkMode usando o Chrome DevTools? Neste post, vou mostrar como você pode fazer isso de forma fácil e rápida. O Chrome DevTools é uma ferramenta poderosa que permite inspecionar, depurar e modificar o código de uma página web. Uma das novidades do Chrome DevTools é a possibilidade de emular o modo escuro usando um comando ou um painel de renderização.
+
+O modo escuro é uma preferência do usuário que indica se ele prefere ver interfaces claras ou escuras. Muitos sites e aplicativos já oferecem essa opção, mas nem todos se adaptam automaticamente à escolha do usuário. Para verificar se o seu site está pronto para o modo escuro, você pode usar o Chrome DevTools para simular essa condição.
+
+Para fazer isso, você precisa usar a propriedade CSS prefers-color-scheme, que retorna o valor dark ou light dependendo da preferência do usuário. Você pode usar essa propriedade em suas folhas de estilo para definir cores e imagens diferentes para cada caso. Por exemplo:
+
+<Code language="bash">
+  {`
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
+`}
+
+</Code>
+
+Mas como testar isso sem mudar a configuração do seu sistema operacional ou navegador? É aí que entra o Chrome DevTools. Existem duas formas de emular o modo escuro usando o Chrome DevTools:
+
+- Usando o menu de comando: com o DevTools aberto e focado, pressione SHIFT+CMD+P (no Mac) ou <Kbd>CTRL</Kbd><Kbd2>+</Kbd2><Kbd>SHIFT</Kbd><Kbd2>+</Kbd2><Kbd>P</Kbd>(no Windows) e digite "Emular CSS prefers-color-scheme: dark". Selecione o comando e pressione Enter para executá-lo. Você verá que o seu site mudará para o modo escuro, se estiver usando a propriedade CSS mencionada acima.
+- Usando o painel de renderização: com o DevTools aberto, clique no ícone de três pontos no canto superior direito e selecione "Mais ferramentas" > "Renderização". No painel que aparece na parte inferior da tela, procure pela opção "Emular CSS media feature prefers-color-scheme" e selecione "dark" no menu suspenso.
+
+Pronto! Agora você pode testar seu DarkMode usando o Chrome DevTools e ver como o seu site se comporta em diferentes condições. Espero que este post tenha sido útil e que você tenha gostado. Até a próxima!
