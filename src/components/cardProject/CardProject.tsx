@@ -11,6 +11,7 @@ export default function CardProject({
     if (name.includes("Stranger")) {
       return handleNameStranger(name);
     }
+
     return handleWhiteSpaces(name);
   };
 
