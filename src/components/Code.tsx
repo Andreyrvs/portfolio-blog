@@ -10,10 +10,15 @@ export default function Code(props: CodeProps) {
       showInlineLineNumbers
       language={language}
       style={atomOneDark}
+      wrapLines={true}
       customStyle={{
         margin: 0,
         padding: ".7rem .1rem",
+        fontSize: "16px",
+        width: "100%",
+        color: "#fff",
       }}
+      lineNumberContainerStyle={{ left: "0" }}
     >
       {children}
     </SyntaxHighlighter>
