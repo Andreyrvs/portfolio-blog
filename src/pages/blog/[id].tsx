@@ -9,6 +9,7 @@ import Layout from "@/components/layout/Layout";
 import Date from "@/components/Date";
 import Code from "@/components/Code";
 import Props from "@/types/Props";
+
 import utilStyles from "@/styles/blog.module.css";
 
 const components = { Code, SyntaxHighlighter };
