@@ -4,15 +4,18 @@ import matter from "gray-matter";
 import Head from "next/head";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
+import { MDXProvider } from "@mdx-js/react";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import Layout from "@/components/layout/Layout";
-import Date from "@/components/Date";
-import Code from "@/components/Code";
+import Date from "@/components/blog/Date";
+import Code from "@/components/blog/Code";
 import Props from "@/types/Props";
-
+import Kbd from "@/components/blog/kbd/Kbd";
+import MiniCode from "@/components/blog/MiniCode";
+import NewOl from "@/components/blog/NewOl";
 import utilStyles from "@/styles/blog.module.css";
 
-const components = { Code, SyntaxHighlighter };
+const components = { Code, SyntaxHighlighter, Kbd, MiniCode };
 
 const WHITE_SPACE = " ";
 
@@ -41,7 +44,11 @@ export default function Post(props: Props): JSX.Element {
         <div className={utilStyles.lightText}>
           <Date dateString={date} />
         </div>
-        <MDXRemote {...mdxSource} components={components}></MDXRemote>
+        <MDXRemote
+          lazy
+          {...mdxSource}
+          components={{ ol: NewOl, ...components }}
+        ></MDXRemote>
       </article>
     </Layout>
   );

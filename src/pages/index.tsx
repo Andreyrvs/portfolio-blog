@@ -10,8 +10,12 @@ import IMG from "@/components/cardProject/IMG";
 import styles23 from "@/components/cardProject/Img.module.css";
 import handleFiles from "@/lib/mocks";
 
-const siteTitle = "Andrey's Portfolio";
-const siteDescription = "Portfolio home page";
+const TITLE = "Andrey's Portfolio";
+const SITE_TITLE = "Andrey R. V. - Desenvolvedor Web Fullstack";
+const SITE_DESCRIPTION =
+  "Andrey R. V. é um desenvolvedor web fullstack com experiência em JavaScript, TypeScript, React, Node.js e Python.";
+
+const SITE_URL = "https://andreyrv.dev";
 
 type Props = {
   repositories: GithubRepo[];
@@ -38,13 +42,24 @@ export default function Home({ repositories, imagesMockups }: Props) {
     />
   ));
 
+  const handleMetaTags = (
+    <Head>
+      <title>{TITLE}</title>
+      <meta name="title" property="og:title" content={SITE_TITLE} />
+      <meta
+        name="description"
+        property="og:description"
+        content={SITE_DESCRIPTION}
+      />
+      <meta property="og:title" content={SITE_TITLE} />
+      <meta property="og:description" content={SITE_DESCRIPTION} />
+      <meta property="og:url" content={SITE_URL}></meta>
+    </Head>
+  );
+
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-        <meta name="description" content={siteDescription} />
-        <meta name="title" content={siteTitle} />
-      </Head>
+      <>{handleMetaTags}</>
       <Header />
       <section>
         <p className={styles.paragraph}>{resume}</p>
