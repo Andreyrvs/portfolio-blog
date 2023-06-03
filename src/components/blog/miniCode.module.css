@@ -8,3 +8,11 @@
   margin: 0;
   padding: 0.125em 0.25em;
 }
+
+@media (prefers-color-scheme: dark) {
+  .code {
+    background-color: #2d2d2d;
+    color: #F9F9F9;
+  }
+
+}

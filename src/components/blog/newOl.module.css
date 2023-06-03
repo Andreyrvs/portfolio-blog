@@ -29,3 +29,11 @@
   margin-left:  1rem  ;
   padding: 0;
 }
+
+@media (prefers-color-scheme: dark) {
+  .my > li::before  {
+    background-color: #5d5d5d;
+    color: #F9F9F9;
+  }
+
+}
