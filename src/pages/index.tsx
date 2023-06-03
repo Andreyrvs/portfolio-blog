@@ -15,6 +15,8 @@ const SITE_TITLE = "Andrey R. V. - Desenvolvedor Web Fullstack";
 const SITE_DESCRIPTION =
   "Andrey R. V. é um desenvolvedor web fullstack com experiência em JavaScript, TypeScript, React, Node.js e Python.";
 
+const SITE_URL = "https://andreyrv.dev";
+
 type Props = {
   repositories: GithubRepo[];
   imagesMockups: string[];
@@ -51,6 +53,7 @@ export default function Home({ repositories, imagesMockups }: Props) {
       />
       <meta property="og:title" content={SITE_TITLE} />
       <meta property="og:description" content={SITE_DESCRIPTION} />
+      <meta property="og:url" content={SITE_URL}></meta>
     </Head>
   );
 
