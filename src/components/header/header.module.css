@@ -19,6 +19,7 @@
 .iconsContainer {
   display: flex;
   gap:  1rem;
+  margin: 1rem;
 }
 
 .icons {
@@ -32,4 +33,14 @@
 .profession {
   font-size: 2.2em;
   margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .icons {
+    background-color: #f3f4f6;
+    border-radius: 10%;
+    opacity: 50%;
+    padding: .125rem;
+  }
+
 }
