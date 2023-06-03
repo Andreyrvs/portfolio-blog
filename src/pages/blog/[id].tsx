@@ -45,6 +45,7 @@ export default function Post(props: Props): JSX.Element {
           <Date dateString={date} />
         </div>
         <MDXRemote
+          lazy
           {...mdxSource}
           components={{ ol: NewOl, ...components }}
         ></MDXRemote>
