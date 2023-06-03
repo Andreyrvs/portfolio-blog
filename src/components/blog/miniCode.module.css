@@ -1,0 +1,10 @@
+.code {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 0.85em;
+  margin: 0;
+  padding: 2px 4px;
+}
