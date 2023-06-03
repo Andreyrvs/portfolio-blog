@@ -6,7 +6,7 @@ import Link from "next/link";
 import { GetStaticProps } from "next";
 import Layout from "@/components/layout/Layout";
 import utilStyles from "@/styles/blog.module.css";
-import Date from "@/components/Date";
+import Date from "@/components/blog/Date";
 import Props from "@/types/Props";
 
 const siteTitle = "Andrey's Blog";

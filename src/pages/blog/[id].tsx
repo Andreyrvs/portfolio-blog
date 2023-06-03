@@ -11,9 +11,10 @@ import Code from "@/components/blog/Code";
 import Props from "@/types/Props";
 import Kbd from "@/components/blog/kbd/Kbd";
 import MiniCode from "@/components/blog/MiniCode";
+import NewOl from "@/components/blog/NewOl";
 import utilStyles from "@/styles/blog.module.css";
 
-const components = { Code, SyntaxHighlighter, Kbd, MiniCode };
+const components = { ol: NewOl, Code, SyntaxHighlighter, Kbd, MiniCode };
 
 const WHITE_SPACE = " ";
 
