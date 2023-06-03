@@ -1,6 +1,10 @@
 import styles from "./newOl.module.css";
-import CodeProps from "@/types/CodeProps";
+import React from "react";
 
-export default function NewOl({ children }: CodeProps) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function NewOl({ children }: Props) {
   return <ol className={styles.my}>{children}</ol>;
 }

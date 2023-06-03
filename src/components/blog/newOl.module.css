@@ -1,0 +1,31 @@
+.my {
+  counter-reset: ol-step-counter;
+  list-style: none;
+}
+
+.my > li {
+  counter-increment: ol-step-counter;
+  margin-top: .5em
+}
+
+.my > li::before {
+  background: #f1f3f4;
+  border-radius: 50%;
+  content: counter(ol-step-counter);
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  gap: 1rem;
+  height: 1.5rem;
+  justify-content: center;
+  line-height: 1.7143;
+  margin-left: -1.5rem;
+  position: absolute;
+  transform: translateY(0.1875rem);
+  width: 1.5rem;
+}
+
+.my > li > p {
+  margin-left:  1rem  ;
+  padding: 0;
+}

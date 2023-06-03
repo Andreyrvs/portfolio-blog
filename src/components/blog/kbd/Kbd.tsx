@@ -1,6 +1,10 @@
 import styles from "./kbd.module.css";
 
-export default function Kbd({ children }: { children: React.ReactNode }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function Kbd({ children }: Props) {
   const items: string[] = String(children).split(/(\+)/);
 
   const handlePlus = items.map((item, index) =>
