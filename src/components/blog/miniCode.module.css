@@ -1,10 +1,10 @@
 .code {
-  background-color: #f7f7f7;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  color: #333;
-  font-family: arial, helvetica, sans-serif;
-  font-size: 0.85em;
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  border-radius: 3px;
+  font-family: ui-monospace,Menlo,Consolas,Monaco,"Roboto Mono","Source Code Pro","Liberation Mono","Lucida Console",monospace;
+  font-size: .9375em;
+  line-height: 1.7333;
   margin: 0;
-  padding: 2px 4px;
+  padding: 0.125em 0.25em;
 }
