@@ -27,6 +27,7 @@ function Projetos({ repositories }: any) {
         <meta name="og:description" content="Page of projects" />
       </Head>
       <h1>Projetos 📚</h1>
+      <h2>🛠⚒ EM CONSTRUÇÃO 🛠⚒</h2>
       <ul className={styles.cardContainer}>{handleRepositories}</ul>
     </Layout>
   );

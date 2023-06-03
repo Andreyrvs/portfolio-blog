@@ -1,0 +1,18 @@
+.code {
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  border-radius: 3px;
+  font-family: ui-monospace,Menlo,Consolas,Monaco,"Roboto Mono","Source Code Pro","Liberation Mono","Lucida Console",monospace;
+  font-size: .9375em;
+  line-height: 1.7333;
+  margin: 0;
+  padding: 0.125em 0.25em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .code {
+    background-color: #2d2d2d;
+    color: #F9F9F9;
+  }
+
+}

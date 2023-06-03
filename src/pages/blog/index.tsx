@@ -6,7 +6,7 @@ import Link from "next/link";
 import { GetStaticProps } from "next";
 import Layout from "@/components/layout/Layout";
 import utilStyles from "@/styles/blog.module.css";
-import Date from "@/components/Date";
+import Date from "@/components/blog/Date";
 import Props from "@/types/Props";
 
 const siteTitle = "Andrey's Blog";
@@ -14,8 +14,6 @@ const siteDescription = "Andrey's blog home page";
 const POST_ROUTE = "/blog/";
 
 export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
-  console.log(sortedPosts);
-
   const listItems = sortedPosts.map(
     ({ frontMatter: { description, tags, date, id, title } }, index) => (
       <li className={utilStyles.listItem} key={index}>
