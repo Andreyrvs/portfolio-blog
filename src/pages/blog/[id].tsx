@@ -6,13 +6,14 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import Layout from "@/components/layout/Layout";
-import Date from "@/components/Date";
-import Code from "@/components/Code";
+import Date from "@/components/blog/Date";
+import Code from "@/components/blog/Code";
 import Props from "@/types/Props";
-import Kbd from "@/components/kbd/Kbd";
+import Kbd from "@/components/blog/kbd/Kbd";
+import MiniCode from "@/components/blog/MiniCode";
 import utilStyles from "@/styles/blog.module.css";
 
-const components = { Code, SyntaxHighlighter, Kbd };
+const components = { Code, SyntaxHighlighter, Kbd, MiniCode };
 
 const WHITE_SPACE = " ";
 
