@@ -14,8 +14,6 @@ const siteDescription = "Andrey's blog home page";
 const POST_ROUTE = "/blog/";
 
 export default function Home({ sortedPosts }: { sortedPosts: Props[] }) {
-  console.log(sortedPosts);
-
   const listItems = sortedPosts.map(
     ({ frontMatter: { description, tags, date, id, title } }, index) => (
       <li className={utilStyles.listItem} key={index}>
