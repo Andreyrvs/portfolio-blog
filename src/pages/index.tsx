@@ -49,6 +49,8 @@ export default function Home({ repositories, imagesMockups }: Props) {
         property="og:description"
         content={SITE_DESCRIPTION}
       />
+      <meta property="og:title" content={SITE_TITLE} />
+      <meta property="og:description" content={SITE_DESCRIPTION} />
     </Head>
   );
 
